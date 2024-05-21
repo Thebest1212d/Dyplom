@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <title>100 найрейтинговіших фільмів IMDb</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+    }
+    p{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  </style>
+
+  <!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+          'download-text': 'Завантажити документ Word',
+          'document-text': 'Якщо ви хочете більший список, ось документ з повним списком 250 найрейтинговіших фільмів IMDb',
+
+
+          'title':'Список 100 найрейтинговіших фільмів IMDb',
+          'IMDb':'<strong>100 найрейтинговіших фільмів IMDb</strong> (англ. IMDb Top 100) — список художніх фільмів, які отримали найвищі середні оцінки користувачів у рейтингу сайту IMDb. За оцінками пошукових систем всесвітньої мережі, це найбільш цитований, а отже найпопулярніший у світі рейтинг фільмів. Це також один з перших кінематографічних рейтингів, створених самими глядачами та кіноманами. До списку включені художні фільми і не включені короткометражні, документальні, телевізійні фільми і мінісеріали.',
+  
+
+          'movies-table': {
+          'position': 'Позиція',
+          'movie': 'Фільм',
+          'original-title': 'Оригінальна назва',
+          'year': 'Рік',
+          'director': 'Режисер',
+          'shawshank-redemption': 'Втеча з Шоушенка',
+        },
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+          'download-text': 'Download Word Document with table',
+          'document-text': 'If you want a larger list, here is a document with the full list of the top 250 IMDb-rated movies.',
+  
+  
+          // Переклад для фільму
+          'title':'List of IMDb\'s Top 100 Movies',
+          'IMDb':'<strong>IMDb Top 100</strong> is a list of feature films that received the highest average user ratings on the IMDb site. According to the evaluations of the search engines of the World Wide Web, this is the most cited, and therefore the most popular rating of films in the world. It is also one of the first cinematic ratings created by the viewers and moviegoers themselves. The list includes feature films and excludes short films, documentaries, television films and miniseries.',
+
+        },
+
+          'movies-table': {
+          'position': 'Position',
+          'movie': 'Movie',
+          'original-title': 'Original Title',
+          'year': 'Year',
+          'director': 'Director',
+          'shawshank-redemption': 'The Shawshank Redemption'
+        }
+};
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+
+
+      document.querySelector('.headingtab h1').textContent = selectedLang['title'];
+      document.querySelector('.headingtab p').innerHTML = selectedLang['IMDb']; 
+      document.querySelector('.download-button').textContent = selectedLang['download-text'];
+      document.querySelector('.containerdoc p').innerHTML = selectedLang['document-text'];
+      
+  }
+  
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav> 
+      </ul>
+    </nav>  
+
+    <div class="theme-switch">
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <div class="headingtab">
+  <h1>Список 100 найрейтинговіших фільмів IMDb</h1>
+  <p>
+    <strong>100 найрейтинговіших фільмів IMDb</strong> (англ. IMDb Top 100) — список художніх фільмів, які отримали найвищі середні оцінки користувачів у рейтингу сайту IMDb. За оцінками пошукових систем всесвітньої мережі, це найбільш цитований, а отже найпопулярніший у світі рейтинг фільмів. Це також один з перших кінематографічних рейтингів, створених самими глядачами та кіноманами.
+    До списку включені художні фільми і не включені короткометражні, документальні, телевізійні фільми і мінісеріали.
+  </p>
+  </div>
+
+
+
+  <table class="table-bro">
+    <thead>
+      <tr>
+        <th>Позиція</th>
+        <th>Фільм</th>
+        <th>Оригінальна назва</th>
+        <th>Рік</th>
+        <th>Режисер</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr>
+        <td>1</td>
+        <td>Втеча з Шоушенка</td>
+        <td>The Shawshank Redemption</td>
+        <td>1994</td>
+        <td>Френк Дарабонт</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Хрещений батько</td>
+        <td>The Godfather</td>
+        <td>1972</td>
+        <td>Френсіс Форд Коппола</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Темний лицар</td>
+        <td>The Dark Knight</td>
+        <td>2008</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Хрещений батько 2</td>
+        <td>The Godfather: Part II</td>
+        <td>1974</td>
+        <td>Френсіс Форд Коппола</td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>12 розгніваних чоловіків</td>
+        <td>12 Angry Men</td>
+        <td>1957</td>
+        <td>Сідні Люмет</td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>Список Шиндлера</td>
+        <td>Schindler's List</td>
+        <td>1993</td>
+        <td>Стівен Спілберг</td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>Володар Перснів: Повернення короля</td>
+        <td>The Lord of the Rings: The Return of the King</td>
+        <td>2003</td>
+        <td>Пітер Джексон</td>
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>Кримінальне чтиво</td>
+        <td>Pulp Fiction</td>
+        <td>1994</td>
+        <td>Квентін Тарантіно</td>
+      </tr>
+
+      <tr>
+        <td>9</td>
+        <td>Володар перснів: Хранителі Персня</td>
+        <td>The Lord of the Rings: The Fellowship of the Ring</td>
+        <td>2001</td>
+        <td>Пітер Джексон</td>
+      </tr>
+
+      <tr>
+        <td>10</td>
+        <td>Хороший, поганий, злий</td>
+        <td>Il buono, il brutto, il cattivo</td>
+        <td>1966</td>
+        <td>Серджо Леоне</td>
+      </tr>
+
+      <tr>
+        <td>11</td>
+        <td>Форрест Ґамп</td>
+        <td>Forrest Gump</td>
+        <td>1994</td>
+        <td>Роберт Земекіс</td>
+      </tr>
+
+      <tr>
+        <td>12</td>
+        <td>Бійцівський клуб</td>
+        <td>Fight Club</td>
+        <td>1999</td>
+        <td>Девід Фінчер</td>
+      </tr>
+
+      <tr>
+        <td>13</td>
+        <td>Володар перснів: Дві вежі</td>
+        <td>The Lord of the Rings: The Two Towers</td>
+        <td>2002</td>
+        <td>Пітер Джексон</td>
+      </tr>
+
+      <tr>
+        <td>14</td>
+        <td>Початок</td>
+        <td>Inception</td>
+        <td>2010</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>15</td>
+        <td>Зоряні війни. Епізод V. Імперія завдає удару у відповідь</td>
+        <td>Star Wars: Episode V — The Empire Strikes Back</td>
+        <td>1980</td>
+        <td>Ірвін Кершнер</td>
+      </tr>
+
+      <tr>
+        <td>16</td>
+        <td>Матриця</td>
+        <td>The Matrix</td>
+        <td>1999</td>
+        <td>брати Вачовскі</td>
+      </tr>
+
+      <tr>
+        <td>17</td>
+        <td>Славні хлопці</td>
+        <td>Goodfellas</td>
+        <td>1990</td>
+        <td>Мартін Скорсезе</td>
+      </tr>
+      
+      <tr>
+        <td>18</td>
+        <td>Пролітаючи над гніздом зозулі</td>
+        <td>One Flew Over the Cuckoo's Nest</td>
+        <td>1975</td>
+        <td>Мілош Форман</td>
+      </tr>
+
+      <tr>
+        <td>19</td>
+        <td>Сім</td>
+        <td>Se7en</td>
+        <td>1995</td>
+        <td>Девід Фінчер</td>
+      </tr>
+      
+      <tr>
+        <td>20</td>
+        <td>Це дивовижне життя</td>
+        <td>It's a Wonderful Life</td>
+        <td>1946</td>
+        <td>Френк Капра</td>
+      </tr>
+
+      <tr>
+        <td>21</td>
+        <td>Сім самураїв</td>
+        <td>七人の侍</td>
+        <td>1954</td>
+        <td>Куросава Акіра</td>
+      </tr>
+
+      <tr>
+        <td>22</td>
+        <td>Інтерстеллар</td>
+        <td>Interstellar</td>
+        <td>2014</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>23</td>
+        <td>Мовчання ягнят</td>
+        <td>The Silence of the Lambs</td>
+        <td>1991</td>
+        <td>Джонатан Деммі</td>
+      </tr>
+
+      <tr>
+        <td>24</td>
+        <td>Врятувати рядового Раяна</td>
+        <td>Saving Private Ryan</td>
+        <td>1998</td>
+        <td>Стівен Спілберг</td>
+      </tr>
+
+      <tr>
+        <td>25</td>
+        <td>Місто Бога</td>
+        <td>City of God</td>
+        <td>2002</td>
+        <td>Фернанду Мейрелліш</td>
+      </tr>
+
+      <tr>
+        <td>26</td>
+        <td>Життя прекрасне</td>
+        <td>La vita è bella</td>
+        <td>1997</td>
+        <td>Роберто Беніньї</td>
+      </tr>
+
+      <tr>
+        <td>27</td>
+        <td>Зелена миля</td>
+        <td>The Green Mile</td>
+        <td>1999</td>
+        <td>Френк Дарабонт</td>
+      </tr>
+
+      <tr>
+        <td>28</td>
+        <td>Людина-павук: Крізь Всесвіт</td>
+        <td>Spider-Man: Across the Spider-Verse</td>
+        <td>2023</td>
+        <td>Хоакім Дос Сантос, Кемп Пауерс, Джастін Томпсон</td>
+      </tr>
+
+      <tr>
+        <td>29</td>
+        <td>Зоряні війни. Епізод IV. Нова надія</td>
+        <td>Star Wars: Episode IV — A New Hope</td>
+        <td>1977</td>
+        <td>Джордж Лукас</td>
+      </tr>
+
+      <tr>
+        <td>30</td>
+        <td>Термінатор 2: Судний день</td>
+        <td>Terminator 2: Judgment Day</td>
+        <td>1991</td>
+        <td>Джеймс Камерон</td>
+      </tr>
+
+      <tr>
+        <td>31</td>
+        <td>Назад у майбутнє</td>
+        <td>Back to the Future</td>
+        <td>1985</td>
+        <td>Роберт Земекіс</td>
+      </tr>
+
+      <tr>
+        <td>32</td>
+        <td>Віднесені привидами</td>
+        <td>千と千尋の神隠し</td>
+        <td>2001</td>
+        <td>Міядзакі Хаяо</td>
+      </tr>
+
+      <tr>
+        <td>33</td>
+        <td>Піаніст</td>
+        <td>The Pianist</td>
+        <td>2002</td>
+        <td>Роман Полянський</td>
+      </tr>
+
+      <tr>
+        <td>34</td>
+        <td>Психо</td>
+        <td>Psycho</td>
+        <td>1960</td>
+        <td>Альфред Гічкок</td>
+      </tr>
+
+      <tr>
+        <td>35</td>
+        <td>Паразити</td>
+        <td>Parasite / 기생충</td>
+        <td>2019</td>
+        <td>Пон Чжун Хо</td>
+      </tr>
+
+      <tr>
+        <td>36</td>
+        <td>Гладіатор</td>
+        <td>Gladiator</td>
+        <td>2000</td>
+        <td>Рідлі Скотт</td>
+      </tr>
+
+      <tr>
+        <td>37</td>
+        <td>Король Лев</td>
+        <td>The Lion King</td>
+        <td>1994</td>
+        <td>Роджер Аллерс, Роб Мінкофф</td>
+      </tr>
+
+      <tr>
+        <td>38</td>
+        <td>Леон</td>
+        <td>Léon</td>
+        <td>1994</td>
+        <td>Люк Бессон</td>
+      </tr>
+
+      <tr>
+        <td>39</td>
+        <td>Американська історія Ікс</td>
+        <td>American History X</td>
+        <td>1998</td>
+        <td>Тоні Кей</td>
+      </tr>
+
+      <tr>
+        <td>40</td>
+        <td>Відступники</td>
+        <td>The Departed</td>
+        <td>2006</td>
+        <td>Мартін Скорсезе</td>
+      </tr>
+
+      <tr>
+        <td>41</td>
+        <td>Одержимість</td>
+        <td>Whiplash</td>
+        <td>2014</td>
+        <td>Дам'єн Шазель</td>
+      </tr>
+
+      <tr>
+        <td>42</td>
+        <td>Престиж</td>
+        <td>The Prestige</td>
+        <td>2006</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>43</td>
+        <td>Звичайні підозрювані</td>
+        <td>The Usual Suspects</td>
+        <td>1995</td>
+        <td>Браян Сінгер</td>
+      </tr>
+
+      <tr>
+        <td>44</td>
+        <td>Могила світлячків</td>
+        <td>火垂るの墓</td>
+        <td>1988</td>
+        <td>Ісао Такахата</td>
+      </tr>
+
+      <tr>
+        <td>45</td>
+        <td>Харакірі</td>
+        <td>切腹</td>
+        <td>1962</td>
+        <td>Кобаясі Масакі</td>
+      </tr>
+
+      <tr>
+        <td>46</td>
+        <td>Касабланка</td>
+        <td>Casablanca</td>
+        <td>1942</td>
+        <td>Майкл Кертіс</td>
+      </tr>
+
+      <tr>
+        <td>47</td>
+        <td>Недоторканні</td>
+        <td>Intouchables</td>
+        <td>2011</td>
+        <td>Олів'є Накаш</td>
+      </tr>
+
+      <tr>
+        <td>48</td>
+        <td>Нові часи</td>
+        <td>Modern TimesА</td>
+        <td>1936</td>
+        <td>Чарлі Чаплін</td>
+      </tr>
+
+      <tr>
+        <td>49</td>
+        <td>Новий кінотеатр «Парадізо»</td>
+        <td>Cinema Paradiso</td>
+        <td>1988</td>
+        <td>Джузеппе Торнаторе</td>
+      </tr>
+
+      <tr>
+        <td>50</td>
+        <td>Одного разу на Дикому Заході</td>
+        <td>Once Upon a Time in the West</td>
+        <td>1968</td>
+        <td>Серджо Леоне</td>
+      </tr>
+
+      <tr>
+        <td>51</td>
+        <td>Вікно у двір</td>
+        <td>Rear Window</td>
+        <td>1954</td>
+        <td>Альфред Гічкок</td>
+      </tr>
+
+      <tr>
+        <td>52</td>
+        <td>Чужий</td>
+        <td>Alien</td>
+        <td>1979</td>
+        <td>Рідлі Скотт</td>
+      </tr>
+
+      <tr>
+        <td>53</td>
+        <td>Вогні великого міста</td>
+        <td>City Lights</td>
+        <td>1931</td>
+        <td>Чарлі Чаплін</td>
+      </tr>
+
+      <tr>
+        <td>54</td>
+        <td>Апокаліпсис сьогодні</td>
+        <td>Apocalypse Now</td>
+        <td>1979</td>
+        <td>Френсіс Форд Коппола</td>
+      </tr>
+
+      <tr>
+        <td>55</td>
+        <td>Джанґо вільний</td>
+        <td>Django Unchained</td>
+        <td>2012</td>
+        <td>Квентін Тарантіно</td>
+      </tr>
+
+      <tr>
+        <td>56</td>
+        <td>Пам'ятай</td>
+        <td>Memento</td>
+        <td>2000</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>57</td>
+        <td>Індіана Джонс: У пошуках втраченого ковчега</td>
+        <td>Raiders of the Lost Ark</td>
+        <td>1981</td>
+        <td>Стівен Спілберг</td>
+      </tr>
+
+      <tr>
+        <td>58</td>
+        <td>ВОЛЛ-І</td>
+        <td>WALL·E</td>
+        <td>2008</td>
+        <td>Ендрю Стентон</td>
+      </tr>
+
+      <tr>
+        <td>59</td>
+        <td>Життя інших</td>
+        <td>The Lives of Others</td>
+        <td>2006</td>
+        <td>Флоріан Хенкель фон Доннерсмарк</td>
+      </tr>
+
+      <tr>
+        <td>60</td>
+        <td>Оппенгеймер</td>
+        <td>Oppenheimer</td>
+        <td>2023</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>61</td>
+        <td>Бульвар Сансет</td>
+        <td>Sunset Blvd.</td>
+        <td>1950</td>
+        <td>Біллі Вайлдер</td>
+      </tr>
+
+      <tr>
+        <td>62</td>
+        <td>Шляхи слави</td>
+        <td>Paths of Glory</td>
+        <td>1957</td>
+        <td>Стенлі Кубрик</td>
+      </tr>
+
+      <tr>
+        <td>63</td>
+        <td>Месники: Війна нескінченності</td>
+        <td>Avengers: Infinity War</td>
+        <td>2018</td>
+        <td>Ентоні Руссо, Джо Руссо</td>
+      </tr>
+
+      <tr>
+        <td>64</td>
+        <td>Сяйво</td>
+        <td>The Shining</td>
+        <td>1980</td>
+        <td>Стенлі Кубрик</td>
+      </tr>
+
+      <tr>
+        <td>65</td>
+        <td>Людина-павук: Навколо всесвіту</td>
+        <td>Spider-Man: Into the Spider-Verse</td>
+        <td>2018</td>
+        <td>Боб Персічетті, Пітер Ремзі, Родні Ротман</td>
+      </tr>
+
+      <tr>
+        <td>66</td>
+        <td>Великий диктатор</td>
+        <td>The Great Dictator</td>
+        <td>1940</td>
+        <td>Чарлі Чаплін</td>
+      </tr>
+
+      <tr>
+        <td>67</td>
+        <td>Свідок обвинувачення</td>
+        <td>Witness for the Prosecution</td>
+        <td>1957</td>
+        <td>Біллі Вайлдер</td>
+      </tr>
+
+      <tr>
+        <td>68</td>
+        <td>Чужі</td>
+        <td>Aliens</td>
+        <td>1986</td>
+        <td>Джеймс Камерон</td>
+      </tr>
+
+      <tr>
+        <td>69</td>
+        <td>Безславні виродки</td>
+        <td>Inglourious Basterds</td>
+        <td>2009</td>
+        <td>Квентін Тарантіно</td>
+      </tr>
+
+      <tr>
+        <td>70</td>
+        <td>Темний лицар повертається</td>
+        <td>The Dark Knight Rises</td>
+        <td>2012</td>
+        <td>Крістофер Нолан</td>
+      </tr>
+
+      <tr>
+        <td>71</td>
+        <td>Краса по-американськи</td>
+        <td>American Beauty</td>
+        <td>1999</td>
+        <td>Сем Мендес</td>
+      </tr>
+
+      <tr>
+        <td>72</td>
+        <td>Доктор Стрейнджлав, або Як я навчився не хвилюватися й полюбив атомну бомбу</td>
+        <td>Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb</td>
+        <td>1964</td>
+        <td>Стенлі Кубрик</td>
+      </tr>
+
+      <tr>
+        <td>73</td>
+        <td>Олдбой</td>
+        <td>Oldboy</td>
+        <td>2003</td>
+        <td>Пан Чхан Ук</td>
+      </tr>
+
+      <tr>
+        <td>74</td>
+        <td>Коко</td>
+        <td>Coco</td>
+        <td>2017</td>
+        <td>Лі Анкрич, Едріан Моліна</td>
+      </tr>
+
+      <tr>
+        <td>75</td>
+        <td>Амадей</td>
+        <td>Amadeus</td>
+        <td>1984</td>
+        <td>Мілош Форман</td>
+      </tr>
+
+      <tr>
+        <td>76</td>
+        <td>Історія іграшок</td>
+        <td>Toy Story</td>
+        <td>1995</td>
+        <td>Джон Лассетер</td>
+      </tr>
+
+      <tr>
+        <td>77</td>
+        <td>Підводний човен</td>
+        <td>Das Boot</td>
+        <td>1981</td>
+        <td>Вольфганг Петерсен</td>
+      </tr>
+
+      <tr>
+        <td>78</td>
+        <td>Хоробре серце</td>
+        <td>Braveheart</td>
+        <td>1995</td>
+        <td>Мел Гібсон</td>
+      </tr>
+
+      <tr>
+        <td>79</td>
+        <td>Месники: Завершення</td>
+        <td>Avengers: Endgame</td>
+        <td>2019</td>
+        <td>брати Руссо</td>
+      </tr>
+
+      <tr>
+        <td>80</td>
+        <td>Джокер</td>
+        <td>Joker</td>
+        <td>2019</td>
+        <td>Тодд Філліпс</td>
+      </tr>
+      
+      <tr>
+        <td>81</td>
+        <td>Принцеса Мононоке</td>
+        <td>Princess Mononoke</td>
+        <td>1997</td>
+        <td>Міядзакі Хаяо</td>
+      </tr>
+
+      <tr>
+        <td>82</td>
+        <td>Розумник Вілл Гантінґ</td>
+        <td>Good Will Hunting</td>
+        <td>1997</td>
+        <td>Гас Ван Сент</td>
+      </tr>
+
+      <tr>
+        <td>83</td>
+        <td>Твоє ім'я</td>
+        <td>君の名は / Kimi no na wa</td>
+        <td>2016</td>
+        <td>Макото Сінкай</td>
+      </tr>
+
+      <tr>
+        <td>84</td>
+        <td>Одного разу в Америці</td>
+        <td>Once Upon a Time in America</td>
+        <td>1984</td>
+        <td>Серджіо Леоне</td>
+      </tr>
+
+      <tr>
+        <td>85</td>
+        <td>Рай та пекло</td>
+        <td>天国と地獄 / High and Low</td>
+        <td>1963</td>
+        <td>Куросава Акіра</td>
+      </tr>
+
+      <tr>
+        <td>86</td>
+        <td>Три ідіоти</td>
+        <td>3 Idiots</td>
+        <td>2009</td>
+        <td>Раджкумар Хірані</td>
+      </tr>
+
+      <tr>
+        <td>87</td>
+        <td>Співаючи під дощем</td>
+        <td>Singin' in the Rain</td>
+        <td>1952</td>
+        <td>Стенлі Донен, Джин Келлі</td>
+      </tr>
+
+      <tr>
+        <td>88</td>
+        <td>Капернаум</td>
+        <td>كفرناحوم / Capernaum</td>
+        <td>2018</td>
+        <td>Надін Лабакі</td>
+      </tr>
+
+      <tr>
+        <td>89</td>
+        <td>Реквієм за мрією</td>
+        <td>Requiem for a Dream</td>
+        <td>2000</td>
+        <td>Даррен Аронофскі</td>
+      </tr>
+
+      <tr>
+        <td>90</td>
+        <td>Іди і дивись</td>
+        <td>Иди и смотри</td>
+        <td>1985</td>
+        <td>Елем Климов</td>
+      </tr>
+
+      <td>91</td>
+      <td>Історія іграшок 3</td>
+      <td>Toy Story 3</td>
+      <td>2010</td>
+      <td>Лі Анкрич</td>
+    </tr>
+
+    <tr>
+      <td>92</td>
+      <td>Зоряні війни. Епізод VI. Повернення джедая</td>
+      <td>Star Wars: Episode VI — Return of the Jedi</td>
+      <td>1983</td>
+      <td>Річард Маркуанд</td>
+    </tr>
+
+    <tr>
+      <td>93</td>
+      <td>Вічне сяйво чистого розуму</td>
+      <td>Eternal Sunshine of the Spotless Mind</td>
+      <td>2004</td>
+      <td>Мішель Ґондрі</td>
+    </tr>
+
+    <tr>
+      <td>94</td>
+      <td>2001 рік: Космічна Одіссея</td>
+      <td>2001: A Space Odyssey</td>
+      <td>1968</td>
+      <td>Стенлі Кубрик</td>
+    </tr>
+
+    <tr>
+      <td>95</td>
+      <td>Полювання</td>
+      <td>Jagten</td>
+      <td>2012</td>
+      <td>Томас Вінтерберґ</td>
+    </tr>
+
+    <tr>
+      <td>96</td>
+      <td>Скажені пси</td>
+      <td>Reservoir Dogs</td>
+      <td>1992</td>
+      <td>Квентін Тарантіно</td>
+    </tr>
+
+    <tr>
+      <td>97</td>
+      <td>Жити</td>
+      <td>生きる / Ikiru</td>
+      <td>1985</td>
+      <td>Куросава Акіра</td>
+    </tr>
+
+    <tr>
+      <td>98</td>
+      <td>Лоуренс Аравійський</td>
+      <td>Lawrence of Arabia</td>
+      <td>1962</td>
+      <td>Девід Лін</td>
+    </tr>
+
+    <tr>
+      <td>99</td>
+      <td>Квартира</td>
+      <td>The Apartment</td>
+      <td>1960</td>
+      <td>Біллі Вайлдер</td>
+    </tr>
+
+    <tr>
+      <td>100</td>
+      <td>Громадянин Кейн</td>
+      <td>Citizen Kane</td>
+      <td>1941</td>
+      <td>Орсон Веллс</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="table-divider"></div>
+  
+  <div class="containerdoc">
+    <p>Якщо ви хочете більший список, ось документ з повним списком 250 найрейтинговіших фільмів IMDb</p>
+    <a href="Topfilms.docx" download class="download-button">Завантажити документ Word</a>
+  </div>
+
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Phone:+380982023020
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-translation-key="all-rights">&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

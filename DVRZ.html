@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - Дільничний з ДВРЗ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+  
+  
+          'heading': 'Дільничний з ДВРЗ',
+          'releaseYear': 'Рік випуску:',
+          'genre': '<strong>Жанр:</strong> екшн/комедія',
+          'directors': '<strong>Режисер:</strong> Роман Бровко, Роман Ткаченко, Тарас Рибальченко',
+          'cast': '<strong>У ролях:</strong> В\'ячеслав Довженко — Сергій Олександрович Бондар, капітан поліції, дільничний інспектор Віталій Іванченко — Петро Дзюба, лейтенант / капітан поліції, дільничний інспектор',
+          'duration': '<strong>Тривалість:</strong> 24 епізоди',
+          'country': '<strong>Країна:</strong> Україна',
+          'language': '<strong>Озвучення:</strong> Українська',
+          'description': '<strong>Опис:</strong>  Головний герой комедії "Дільничний з ДВРЗ", Сергій Бондар, відомий як легендарний оперативник столиці, раптово опиняється в серці найнебезпечнішого району Києва – ДВРЗ. Причина його тутешнього призначення? Сергій правильно посадив за ґрати впливового мажора, а це зовсім не сподобалося керівництву Бондаря у комедійному серіалі 2023 року. Перший сезон "Дільничного з ДВРЗ" – це захоплююча українська комедійна сага, в якій розумний, відповідальний та чесний поліцейський змушений адаптуватися до нової реальності в одному з найбільш проблемних районів столиці. Сергій, який завжди був відданий своїй роботі, вирішує взяти управління районом у свої руки, навіть якщо це означає відмову від особистого життя та вільного часу. Проте його ідеали про порядок та закон швидко стикаються з реальністю життя у ДВРЗ, де кожен день – це нове випробування. Сергію доводиться вчитися вирішувати конфлікти і розкривати злочини, водночас балансуючи на межі законності та моральності. Тим часом, його колега, лейтенант Віталій Іванченко, допомагає йому зрозуміти та пристосуватися до особливостей місцевого середовища. У серіалі "Дільничний з ДВРЗ" глядачі також отримають можливість поглибитися у життя персонажів, які мають свої власні історії, мрії та амбіції. Сергій Бондар, незважаючи на своє велике досвіду у поліцейській роботі, зіткнеться з непередбачуваними викликами і складними ситуаціями, які вимагатимуть від нього не лише професійності, а й емоційної міцності. Повсякденне життя у ДВРЗ буде наповнене різноманітними перипетіями, від місцевих банд та кримінальних угруповань до проблем жителів району, з якими доведеться вирішувати конфлікти та врегульовувати суперечки.Кожен епізод серіалу буде відкривати нові аспекти життя у ДВРЗ, де кожен персонаж, навіть найзвичайніший мешканець, має свої секрети та темні сторони. Сергій, як головний герой, буде ставити перед собою не лише завдання затримання злочинців, а й намагатиметься змінити життя та покращити умови проживання у своєму районі. Під час розслідування злочинів та проведення операцій, Сергій зустріне різних людей – від підпільників до місцевих активістів, кожен з яких відіграє свою роль у складному мозаїчному світі ДВРЗ. Сергій також виявить, що вірність його колег та підтримка родини є невід\'ємною частиною його успішної роботи та виживання у небезпечному середовищі.Незважаючи на всі виклики та труднощі, які чекають на Сергія, він не здасться і продовжить боротьбу за справедливість та порядок у своєму районі. У серіалі буде досліджено не лише кримінальну складову життя у ДВРЗ, а й соціальні, економічні та політичні аспекти, що впливають на життя його мешканців.Серіал "Дільничний з ДВРЗ" також пропонуватиме глядачам глибокий аналіз сучасного українського суспільства, його проблем та перспектив. Кожен епізод буде насичений динамічними сценами дій та несподіваними поворотами подій, що триматимуть глядачів у напруженні до самого кінця.У своїй боротьбі зі злочинністю та корупцією, Сергій буде стикатися зі складними моральними ділемами та важливими виборами, які впливатимуть на його долю та долю його району.Кожен епізод буде заповнений емоційними зіткненнями, які відобразяться на психологічному стані героїв та їхніх відносинах з оточуючими. Серіал також розкриє тему взаємодії між поліцією та місцевими громадськими організаціями та активістами, які працюють на благо свого району. Усі події серіалу будуть реалістичною відтворенням сучасного життя у великому місті, де кожен персонаж намагатиметься знайти своє місце під сонцем.У серіалі "Дільничний з ДВРЗ" глядачі побачать, як Сергій вчиться робити важливі рішення та боротися зі злочинністю у вуличних банд відповідально та з гумором. Стежте за історією, яка поєднує в собі елементи драми, екшну та комедії, і дозвольте собі відчути всю ширину емоцій у цій захоплюючій українській серії.',
+          
+          'recommendation-heading': 'Що ще подивитися',
+  
+          'trailer-heading': 'Трейлер: Дільничний з ДВРЗ',
+          'trailer-description': 'Приготуйтеся до захоплюючого пригоди у новому українському серіалі "Дільничий з ДВРЗ"',
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+  
+  
+          // Переклад для фільму
+  
+          'heading': 'Beat Cop from DVRS',
+          'releaseYear': 'Release Year:',
+          'genre': '<strong>Genre:</strong> Action/Comedy',
+          'directors': '<strong> Directors:</strong> Roman Brovko, Roman Tkachenko, Taras Rybalchenko',
+          'cast': '<strong>Cast:</strong> Vyacheslav Dovzhenko as Serhiy Oleksandrovych Bondar, police captain, precinct inspector; Vitaliy Ivanchenko as Petro Dziuba, lieutenant/captain, precinct inspector',
+          'duration': '<strong>Duration:</strong> 24 episodes',
+          'country': '<strong>Country:</strong> Ukraine',
+          'language': '<strong>Language:</strong> ukrainian',
+          'description': '<strong>Description:</strong> Serhii Bondar, the main character of the comedy "Dilnychny z DVRZ", known as a legendary operative of the capital, suddenly finds himself in the heart of the most dangerous district of Kyiv - DVRZ. The reason for his appointment here? Serhii correctly put an influential major behind bars, and Bondar\'s management did not like this at all in the comedy series of 2023. The first season of "Dilnichny z DVRZ" is an exciting Ukrainian comedy saga in which a smart, responsible and honest policeman is forced to adapt to the new reality in one of the most problematic districts of the capital. Serhiy, who has always been devoted to his work, decides to take the management of the district into his own hands, even if it means giving up his personal life and free time. However, his ideals of order and law quickly collide with the reality of life in the DVRZ, where every day is a new test. Sergey has to learn to resolve conflicts and solve crimes, while balancing on the border of legality and morality. Meanwhile, his colleague, Lieutenant Vitaly Ivanchenko, helps him understand and adapt to the peculiarities of the local environment. In the series "Dilnichny z DVRZ" viewers will also have the opportunity to delve into the lives of characters who have their own stories, dreams and ambitions. Serhiy Bondar, despite his extensive experience in police work, will face unforeseen challenges and difficult situations that will require him not only to be professional, but also to be emotionally strong. Everyday life in the DVRZ will be filled with various vicissitudes, from local gangs and criminal groups to the problems of the residents of the area, with whom you will have to solve conflicts and settle disputes. Each episode of the series will reveal new aspects of life in the DVRZ, where each character, even the most ordinary resident, has his own secrets and dark sides. Serhiy, as the main character, will set before himself not only the task of apprehending criminals, but also will try to change life and improve living conditions in his area. During the investigation of crimes and conducting operations, Serhii will meet different people - from underground to local activists, each of whom plays a role in the complex mosaic world of the DVRZ. Serhiy will also discover that the loyalty of his colleagues and the support of his family are an integral part of his successful work and survival in a dangerous environment. Despite all the challenges and difficulties that await Serhiy, he will not give up and continue the fight for justice and order in his district The series will explore not only the criminal component of life in the DVRZ, but also the social, economic and political aspects that affect the lives of its residents. Each episode will be full of dynamic action scenes and unexpected turns of events that will keep viewers in suspense until the very end. In his fight against crime and corruption, Serhiy will face complex moral dilemmas and important choices that will affect his fate and the fate of his district. Each episode will be filled with emotional clashes, which will be reflected in the psychological state of the characters and their relationships with others. The series will also reveal the topic of interaction between the police and local public organizations and activists working for the benefit of their area. All the events of the series will be a realistic reproduction of modern life in a big city, where each character will try to find his place under the sun. In the series "Dilnichny z DVRZ" viewers will see how Serhii learns to make important decisions and fight crime from street gangs responsibly and with humor. Follow the story that combines elements of drama, action and comedy, and allow yourself to experience the full range of emotions in this exciting Ukrainian series.', 
+  
+          'recommendation-heading': 'What else to watch',
+  
+          'trailer-heading': 'Trailer: Beat Cop from DVRS',
+          'trailer-description': 'Get ready for an exciting adventure in the new Ukrainian TV series "Dilnichny z DVRZ"',
+        },
+  };
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+      
+  
+      // Змінити текст для назви фільму
+      document.querySelector('.movie-details h2').textContent = selectedLang['heading'];
+  
+      document.querySelector('.movie-details p:nth-child(3)').innerHTML = '<strong>' + selectedLang['releaseYear'] + '</strong> 2020';
+      document.querySelector('.movie-details p:nth-child(4)').innerHTML = selectedLang['genre'];
+      document.querySelector('.movie-details p:nth-child(5)').innerHTML = selectedLang['directors'];
+      document.querySelector('.movie-details p:nth-child(6)').innerHTML = selectedLang['cast'];
+      document.querySelector('.movie-details p:nth-child(7)').innerHTML = selectedLang['duration'];
+      document.querySelector('.movie-details p:nth-child(8)').innerHTML = selectedLang['country'];
+      document.querySelector('.movie-details p:nth-child(9)').innerHTML = selectedLang['language'];
+      document.querySelector('.movie-details p:nth-child(10)').innerHTML = selectedLang['description'];
+  
+  
+      document.querySelector('.trailer-text h2').textContent = selectedLang['trailer-heading'];
+      document.querySelector('.trailer-text p').textContent = selectedLang['trailer-description'];
+  
+      const recommendedMovies = document.querySelector('.recommended-movies h3');
+      recommendedMovies.textContent = translations[lang]['recommendation-heading'];
+  
+   
+      
+  }
+  </script>
+
+  <section class="movie">
+    <div class="movie-details">
+    <img src="images/DVRZ/logo.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+    <h2>Дільничний з ДВРЗ</h2>
+      <p><strong>Рік випуску:</strong> 2020</p>
+      <p><strong>Жанр:</strong> екшн/комедія</p>
+      <p><strong>Режисер:</strong> Роман Бровко, Роман Ткаченко, Тарас Рибальченко</p>
+      <p><strong>У ролях:</strong> В'ячеслав Довженко — Сергій Олександрович Бондар, капітан поліції, дільничний інспектор
+        Віталій Іванченко — Петро Дзюба, лейтенант / капітан поліції, дільничний інспектор </p>
+      <p><strong>Тривалість:</strong> 24 епізоди</p>
+      <p><strong>Країна:</strong> Україна</p>
+      <p><strong>Озвучення:</strong> Українська</p>
+      <p><strong>Опис:</strong> Головний герой комедії "Дільничний з ДВРЗ", Сергій Бондар, відомий як легендарний оперативник столиці, раптово опиняється в серці найнебезпечнішого району Києва – ДВРЗ. Причина його тутешнього призначення? Сергій правильно посадив за ґрати впливового мажора, а це зовсім не сподобалося керівництву Бондаря у комедійному серіалі 2023 року. Перший сезон "Дільничного з ДВРЗ" – це захоплююча українська комедійна сага, в якій розумний, відповідальний та чесний поліцейський змушений адаптуватися до нової реальності в одному з найбільш проблемних районів столиці. Сергій, який завжди був відданий своїй роботі, вирішує взяти управління районом у свої руки, навіть якщо це означає відмову від особистого життя та вільного часу. Проте його ідеали про порядок та закон швидко стикаються з реальністю життя у ДВРЗ, де кожен день – це нове випробування. Сергію доводиться вчитися вирішувати конфлікти і розкривати злочини, водночас балансуючи на межі законності та моральності. Тим часом, його колега, лейтенант Віталій Іванченко, допомагає йому зрозуміти та пристосуватися до особливостей місцевого середовища. У серіалі "Дільничний з ДВРЗ" глядачі також отримають можливість поглибитися у життя персонажів, які мають свої власні історії, мрії та амбіції. Сергій Бондар, незважаючи на своє велике досвіду у поліцейській роботі, зіткнеться з непередбачуваними викликами і складними ситуаціями, які вимагатимуть від нього не лише професійності, а й емоційної міцності. Повсякденне життя у ДВРЗ буде наповнене різноманітними перипетіями, від місцевих банд та кримінальних угруповань до проблем жителів району, з якими доведеться вирішувати конфлікти та врегульовувати суперечки.Кожен епізод серіалу буде відкривати нові аспекти життя у ДВРЗ, де кожен персонаж, навіть найзвичайніший мешканець, має свої секрети та темні сторони. Сергій, як головний герой, буде ставити перед собою не лише завдання затримання злочинців, а й намагатиметься змінити життя та покращити умови проживання у своєму районі. Під час розслідування злочинів та проведення операцій, Сергій зустріне різних людей – від підпільників до місцевих активістів, кожен з яких відіграє свою роль у складному мозаїчному світі ДВРЗ. Сергій також виявить, що вірність його колег та підтримка родини є невід\'ємною частиною його успішної роботи та виживання у небезпечному середовищі.Незважаючи на всі виклики та труднощі, які чекають на Сергія, він не здасться і продовжить боротьбу за справедливість та порядок у своєму районі. У серіалі буде досліджено не лише кримінальну складову життя у ДВРЗ, а й соціальні, економічні та політичні аспекти, що впливають на життя його мешканців.Серіал "Дільничний з ДВРЗ" також пропонуватиме глядачам глибокий аналіз сучасного українського суспільства, його проблем та перспектив. Кожен епізод буде насичений динамічними сценами дій та несподіваними поворотами подій, що триматимуть глядачів у напруженні до самого кінця.У своїй боротьбі зі злочинністю та корупцією, Сергій буде стикатися зі складними моральними ділемами та важливими виборами, які впливатимуть на його долю та долю його району.Кожен епізод буде заповнений емоційними зіткненнями, які відобразяться на психологічному стані героїв та їхніх відносинах з оточуючими. Серіал також розкриє тему взаємодії між поліцією та місцевими громадськими організаціями та активістами, які працюють на благо свого району. Усі події серіалу будуть реалістичною відтворенням сучасного життя у великому місті, де кожен персонаж намагатиметься знайти своє місце під сонцем.У серіалі "Дільничний з ДВРЗ" глядачі побачать, як Сергій вчиться робити важливі рішення та боротися зі злочинністю у вуличних банд відповідально та з гумором. Стежте за історією, яка поєднує в собі елементи драми, екшну та комедії, і дозвольте собі відчути всю ширину емоцій у цій захоплюючій українській серії.</p>
+   </div>
+      <br>
+    </div>
+
+
+
+
+   <!--  #region  Трейлер ютуба*/ -->
+
+   <div class="players">
+    <div class="trailer-container">
+    <div class="trailer-text">
+      <h2>Трейлер: Дільничний з ДВРЗ</h2>
+      <p>Приготуйтеся до захоплюючого пригоди у новому українському серіалі "Дільничий з ДВРЗ"</p>
+    </div>
+    <div class="player-container">
+      <div id="player"></div>
+     </div>
+   </div>
+  
+   <!-- Сценарій JavaScript для відтворення відео -->
+   <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '500',
+        width: '800',
+        videoId: '9AUPT7LDhng',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+    function onPlayerReady(event) {
+    }
+   </script>
+  
+    <!-- #endregion */ -->
+
+    <div class="video-container">
+      <video
+      id="my-video"
+      class="video-js"
+      controls
+      preload="auto"
+      width="1080"
+      height="520"
+      poster="images/DVRZ/video.jpg"
+      data-setup="{}">
+      <source src="films/DVRZ/DVRZ1.mp4" type="video/mp4" />
+      <!-- <source src="MY_VIDEO.webm" type="video/webm" />  -->
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+          >supports HTML5 video</a>
+      </p>
+    </video>  
+  </div>
+  <!-- Кнопки серій -->
+  <div class="episode-buttons">
+    <button onclick="changeVideo('films/DVRZ/DVRZ1.mp4')">Серія 1</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ2.mp4')">Серія 2</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ3.mp4')">Серія 3</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ4.mp4')">Серія 4</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ5.mp4')">Серія 5</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ6.mp4')">Серія 6</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ7.mp4')">Серія 7</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ8.mp4')">Серія 8</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ9.mp4')">Серія 9</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ10.mp4')">Серія 10</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ11.mp4')">Серія 11</button>
+    <button onclick="changeVideo('films/DVRZ/DVRZ12.mp4')">Серія 12</button>
+  </div>
+  </div>
+
+
+   <!-- Рекомендовані фільми -->
+   <div class="recommended-movies">
+    <h3>Що ще подивитися</h3>
+    <div class="movie-logos">
+      <div>
+        <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+        <!--<p><strong>Час</strong></p>-->
+    </div>
+    <div>
+        <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+        <!--<p><strong>13 район</strong></p>-->
+    </div>
+    <div>
+        <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+        <!--<p><strong>Чорний Ворон</strong></p>-->
+    </div>
+    <div>
+        <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+        <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+    </div>
+    <div>
+        <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+        <!--<p><strong>Шаолинь</strong></p>-->
+    </div>
+    </div>
+
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Телефон:+380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+          <!-- Додайте посилання на ваші інші соціальні мережі -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

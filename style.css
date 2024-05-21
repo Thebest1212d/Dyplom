@@ -1,0 +1,842 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #f0f0f0; /* Фоновий колір */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  /*cursor: url('images/Курсор/icons8-курсор-48.png'), auto;*/
+}
+
+/*body:active {
+  cursor: url('images/Курсор/icons8-курсор-64.png'), auto;
+}*/
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Розташування пунктів шапки по центру */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  padding-left: 10px;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+.nav-link { /* Зміна кольору тексту та фону при наведенні миші */
+  text-decoration: none;
+  font-size: 16px; /* Розмір шрифту для кнопок */
+  color: #fff; /* Білий колір тексту на темному фоні */
+  background-color: #333; /* Темний фон */
+  padding: 5px 10px;
+  border-radius: 3px; /* Закругленість */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #554e4e; /* Темний колір при наведенні */ 
+  color: #fff; /* Білий колір тексту при наведенні */
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  flex: 1;
+}
+
+.content {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Посилання у темному режимі */
+.dark-mode .movie a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Посилання у звичайному (світлому) режимі */
+.movie a {
+  color: rgb(0, 0, 0); 
+  text-decoration: none; 
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  margin-top: auto; /* Закріплення футера внизу */
+}
+
+/* Стилізація для відеоплеєра */
+#my-video {
+  display: block;
+  margin: 0 auto; /* Це центрує відеоплеєр по горизонталі */
+  border-radius: 8px; /* Округлені кути */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тінь для відеоплеєра */
+}
+
+.video-info {
+  text-align: center; /* Вирівнює текст по центру */
+} 
+
+/* Задаємо розміри контейнера плеєра */
+.video-container {
+margin: auto;
+height: auto;
+width: 1500px;
+margin-bottom: 30px;
+
+}
+
+.episode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.episode-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Анімація кнопки на сірий */
+.episode-buttons button:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+/* #region Розміщення фільмів */
+.movies-list {
+  display: flex;
+  flex-wrap: wrap; /* Розбиває фільми на кілька рядів, якщо вони не поміщаються на одному рядку */
+}
+
+/*Зміна розміру лого*/
+.movies-list img{
+  width: 260px;
+  height: 380px;
+}
+
+.series{
+  display: flex;
+  flex-wrap: wrap; /* Розбиває фільми на кілька рядів, якщо вони не поміщаються на одному рядку */
+}
+
+.movie {
+  flex: 0 0 calc(18% - 20px); /* 20% ширина для того, щоб було 3 фільми на ряду з відступами між ними */
+  margin: 10px; /* Відступ між фільмами */
+}
+
+.content .movie {
+  text-align: center;
+  width: 200px; 
+}
+
+
+/* #endregion */
+
+/* #region Темна тема */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Кнопка перемикача теми */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.theme-switch label {
+  margin-right: 5px;
+  position: relative;
+}
+
+/* Додавання тексту "Нічний режим" */
+.theme-switch label::after {
+  content: "Night Mode";
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  top: -50px; /* Розташування тексту відносно елементу label */
+  left: 0px; /* Розташування тексту відносно елементу label */
+  font-family: Arial, sans-serif; /* Замініть шрифт на ваш вибір */
+}
+
+/* Зміни для темного режиму */
+.dark-mode header {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-mode nav ul li a {
+  color: #fff;
+}
+
+.dark-mode main {
+  background-color: #111;
+}
+
+.dark-mode .content {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode footer {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Нічний режим для таблиці в топі фільмів*/
+
+.dark-mode table {
+  border-collapse: collapse;
+}
+
+.dark-mode th, td {
+  border: 1px solid #aaa;
+}
+
+.dark-mode th {
+  background-color: #555;
+}
+/* #endregion */
+
+/*Опис фільмів*/ 
+.movie {
+  padding-left: 20px; /* Відступ від лівого краю */
+}
+
+/* #region Рамки */
+
+/*Рамка опису фільму*/
+.movie-details {
+  border: 2px solid #ccc; /* Рамка навколо блоку */
+  padding: 15px; /* Відступ всередині блоку */
+  border-radius: 5px; /* Округлені кути */
+  background-color: #f9f9f9; /* Фоновий колір */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь блоку */
+  margin-top: 20px; /* Відступ зверху для відділення від заголовка */
+  margin-right: 20px; /* Відступ справа */
+}
+
+/*Рамка опису фільму темна тема*/
+[data-theme="dark"] .movie-details {
+  border-color: #666; /* Колір рамки для темної теми */
+  background-color: #333; /* Фоновий колір для темної теми */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Тінь для темної теми */
+}
+
+/*Рамка для плеєрів*/
+.players {
+  border: 2px solid #ccc; /* Рамка навколо блоку */
+  padding: 15px; /* Відступ всередині блоку */
+  border-radius: 5px; /* Округлені кути */
+  background-color: #f9f9f9; /* Фоновий колір */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь блоку */
+  margin-top: 10px; /* Відступ зверху для відділення від заголовка */
+  margin-right: 20px; /* Відступ справа */
+}
+
+/* Рамка для плеєрів для темної теми */
+[data-theme="dark"] .players {
+  border-color: #666; /* Колір рамки для темної теми */
+  background-color: #333; /* Фоновий колір для темної теми */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Тінь для темної теми */
+}
+
+/*Рамка для рекомендацій*/
+.recommended-movies {
+  border: 2px solid #ccc; /* Рамка навколо блоку */
+  padding: 15px; /* Відступ всередині блоку */
+  border-radius: 5px; /* Округлені кути */
+  background-color: #f9f9f9; /* Фоновий колір */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь блоку */
+  margin-right: 20px; /* Відступ справа */
+}
+
+/* Рамка для рекомендацій для темної теми */
+[data-theme="dark"] .recommended-movies {
+  border-color: #666; /* Колір рамки для темної теми */
+  background-color: #333; /* Фоновий колір для темної теми */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Тінь для темної теми */
+}
+
+/* #endregion */
+
+.movie-title {
+  margin-top: 0; /* Встановлення верхнього відступу h1 на мінімальне значення */
+}
+
+.movie-details p {
+  margin-bottom: 5px; /* Відступ між параграфами */
+  margin: 8px 0; /* Відступи для абзаців */
+  line-height: 1.6; /* Міжрядковий інтервал */
+}
+
+.movie-details h2 {
+  margin-top: 0px; /*Прибирання відступу для заголовку*/
+}
+
+.movie-details strong {
+  font-weight: bold; /* Налаштування товщини шрифту для тегу <strong> */
+}
+
+.movie-details p:last-child {
+  margin-bottom: 0; /* Відступ відстані у випадку останнього параграфа */
+}
+
+/* #region Плеєр трейлеру*/
+
+.video-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.player-container {
+  text-align: center; /* Вирівнювання по центру */
+  margin-top: 20px; /* Відступ зверху */
+}
+
+#player {
+  margin-bottom: 20px; /* Відступ знизу */
+}
+
+.video-info {
+  text-align: center;
+  margin-bottom: 20px; /* Відступ під текстом */
+}
+.players{
+  margin-bottom: 20px;
+}
+
+.trailer-container {
+  text-align: center; /* Вирівнювання по центру */
+}
+
+.trailer-text {
+  margin-bottom: 20px; /* Відступ під текстом трейлера */
+}
+
+.player-container {
+  margin-bottom: 40px; /* Відступ під плеєром трейлера */
+}
+
+/* #endregion */
+
+/* Адаптивна верстка для планшетних пристроїв та телефонів */
+@media screen and  (max-width: 1023px) {
+  #my-video {
+    width: 100%; 
+  }
+
+.nav-link{
+  font-size: 45px;
+}
+
+header {
+  text-align: center;
+}
+
+.home-page h1{
+  font-size: 60px;
+}
+
+nav ul {
+  flex-direction: column; /*Розташування пунктів меню шапки в колонку*/
+  align-items: center;
+}
+
+nav ul li {
+  margin: 10px 0; /*Відстань між пунктами меню на шапці*/
+} 
+
+.movie-details img {
+  float: none;
+  margin-right: 0;
+  margin-bottom: 50px;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.recommended-movies {
+  text-align: center;
+}
+
+.home-page .movie {
+  flex: 0 0 100%; /* Ширина блоку з фільмом */
+  margin: 10px; /* Відступ між фільмами */
+}
+
+.movie img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+.movie{
+  font-size: 50px;
+  text-align: center;
+  padding: 0;  /*Прибирає відступ*/
+}
+
+.movie-details p{
+  text-align: left;
+}
+
+/* #region Адаптивна верстка для перемикача */
+.switch {
+  width: 100px; /* Зменшення ширини перемикача */
+  height: 54px; /* Зменшення висоти перемикача */
+}
+
+.slider {
+  border-radius: 54px; /* Зменшення радіуса кнопки */
+}
+
+.slider:before {
+  height: 40px; /* Зменшення висоти кульки перемикача */
+  width: 40px; /* Зменшення ширини кульки перемикача */
+  left: 5px; /* Корекція положення кульки */
+  bottom: 5px; /* Корекція висоти положення кульки */
+}
+
+input:checked + .slider:before {
+  transform: translateX(50px); /* Зменшене значення для переміщення */
+}
+
+.theme-switch label::after {
+  font-size: 40px; /* Зменшення розміру тексту "Night Mode" */
+  top: -100px; /* Розташування тексту відносно елементу label */
+  left: 0px; /* Розташування тексту відносно елементу label */
+}
+
+/* #endregion */
+
+/*Розмір вікна плеєра трейлеру*/
+.player-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (висота / ширина * 100) */
+  padding-top: 25px;
+  height: 0;
+}
+.player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Розмір плеєру*/
+.video-container {
+  max-width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Рекомендації*/
+.movie-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px; /* Використовуємо від'ємні відступи для рівномірного розподілу по краях */
+}
+
+.movie-logos div {
+  width: 33.33%;
+  margin: 0 10px; /* Встановлюємо рівномірний відступ */
+  margin-bottom: 15px; /* Збільшуємо відстань між рядками */
+  text-align: center;
+}
+
+.movie-logos div img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.movie-logos div p {
+  margin-top: 0px; /* Відступ від верхнього краю */
+}
+
+/*Змінення випадаючого списку для мов*/
+.custom-select select {
+  appearance: none; /* Відключаємо стандартний вигляд */
+  padding: 10px; /* Відступи всередині */
+  font-size: 40px !important; /* Розмір шрифту */
+  cursor: pointer;
+  width: 100px !important; 
+  background-color: #fff; /* Колір фону */
+  border: none;
+  outline: none;
+  height: 90px; /* Збільшення висоти випадаючого списку */
+  text-align: center; /* Вирівнювання тексту по центру */
+}
+
+/*Змінення поля для пошуку*/
+#searchInput {
+  width: 650px !important; /* Розтягнути на всю доступну ширину */
+  height: 90px;
+  padding: 10px; /* Відступи всередині */
+  font-size: 40px; /* Розмір шрифту */
+  border: 1px solid #ccc; /* Рамка введення */
+  border-radius: 4px; /* Закруглені кути */
+  box-sizing: border-box; /* Забезпечує включення padding та border у обчислення розміру */
+}
+
+/*Відступ від заголовків до поля пошуку*/
+.theme-switch{
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+/*Змінення таблиці*/
+.table-container {
+  text-align: center; /* Вирівнюємо всередині контейнера по центру */
+  overflow-x: auto; /* Включаємо горизонтальну прокрутку */
+}
+.table-bro {
+  overflow-x: auto; /* Включаємо горизонтальну прокрутку */
+  display: inline-block; /* Забезпечуємо правильне відображення контейнера */
+  border-collapse: collapse;
+  margin: 20px auto 50px; /* Вирівнюємо по центру та додаємо зовнішні відступи */
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 40px;
+}
+
+/*Завантажувальна кнопка документу*/
+.download-button {
+  display: inline-block;
+  width: 40%!important;/* Ширина 50% від батьківського контейнера */
+  height: auto!important; /* Автоматична висота */
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 35px!important;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/*Вирівнювання встовпчик для випадаючих списків*/
+.content{
+  display: block!important;
+}
+  
+/* Випадаючий список сортування */
+.custom-select2 {
+  padding: 14px; /* Збільшуємо відступи */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Збільшуємо радіус кутів */
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+  height: 70px;
+  width: 100%; /* Розтягуємо на всю доступну ширину */
+};
+
+.video-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episode-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px; /* простір між відео та кнопками серій */
+}
+
+.episode-buttons button {
+  margin: 5px;
+}
+}
+
+/* Стилі для десктопних пристроїв */
+@media screen and (min-width: 1024px) {
+  #my-video {
+    width: 60%; /* Зменшення ширини відеоплеєра на десктопних */
+  }
+}
+
+/*Таблиця для топу фільмів*/
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: auto; /* Вирівнює по центру зліва */
+  margin-right: auto; /* Вирівнює по центру справа */
+  margin-bottom: 50px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+/* Стилізація вигляду кастомізованого випадаючого списку */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden; /* Приховуємо розширення списку */
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.custom-select::after {
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.custom-select select {
+  appearance: none; /* Відключаємо стандартний вигляд */
+  padding: 10px; /* Відступи всередині */
+  font-size: 14px; /* Розмір шрифту */
+  cursor: pointer;
+  width: 100%; /* Розтягнути на всю ширину */
+  background-color: #fff; /* Колір фону */
+  border: none;
+  outline: none;
+}
+
+/* Стилізація опцій */
+.custom-select select option {
+  background-color: #f5f5f5;
+  color: #000;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Змінення стилів опцій при наведенні */
+.custom-select select option:hover {
+  background-color: #ddd;
+}
+
+/* Зміни у CSS для стилізації поля введення */
+#searchInput {
+  padding: 10px; /* Додатковий внутрішній відступ */
+  width: 250px; /* Задайте ширину поля введення на ваш розсуд */
+  border: 1px solid #ccc; /* Рамка поля введення */
+  border-radius: 5px; /* Закруглені кути */
+  margin-right: 20px; /* Задайте бажаний відступ праворуч */
+}
+
+#noResultsMessage {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #ffcccc; /* Колір фону для повідомлення про відсутність результатів */
+  border: 1px solid #ff0000; /* Колір межі для повідомлення про відсутність результатів */
+  color: #ff0000; /* Колір тексту для повідомлення про відсутність результатів */
+  margin-bottom: 40px;
+}
+
+/* Ваш основний стиль */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1d1d1d;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* анімація при зміні коліру */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+/* Додайте оформлення для мишки, коли наведена на скролбар */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #242424; /* новий колір при наведенні */
+  box-shadow: 0 0 5px rgba(30, 30, 30, 0.8); /* тінь для виділення */
+}
+
+/* #region Стилі для блоку рекомендованих фільмів */
+.recommended-movies {
+  margin-top: 30px; /* Зсув від верхнього краю */
+  text-align: center; /* Вирівнювання тексту по центру */
+  margin-bottom: 20px;
+}
+
+.recommended-movies h3 {
+  font-size: 24px; /* Розмір шрифту заголовку */
+  margin-top: 10px;
+}
+
+.movie-logos {
+  display: flex; /* Встановлення блоку рекомендацій як flex контейнера */
+  justify-content: space-between; /* Рівномірно розподілити зображення по ширині екрану */
+  gap: 30px; /* Проміжок між елементами */
+  align-items: center; /* Вирівняти зображення по центру по вертикалі */
+}
+
+.movie-logos a {
+  text-decoration: none; /* Видалення підкреслення з посилань */
+  color: inherit; /* Наслідування кольору тексту */
+  flex: 1; /* Кожне зображення буде розтягнуте, щоб зайняти рівну кількість простору */
+  margin: 0 10px; /* Зовнішній відступ між зображеннями */
+  overflow: hidden; /* Заборонити виходження зображень за межі контейнера */
+  position: relative; /* Встановити позицію для внутрішнього контейнера */
+}
+
+.movie-logos img {
+  width: 200px; /* Ширина логотипу фільму */
+  height: 300px; /* Автоматична висота */
+  object-fit: cover; /* Зберігати пропорції зображення та заповнювати контейнер */
+  border-radius: 10px; /* Закруглені кути */
+}
+
+.movie-logos img:hover {
+  opacity: 0.8; /* Зменшення прозорості при наведенні курсора */
+}
+
+/* #endregion */
+
+/*Контейнер для кнопки скачування документу*/
+.containerdoc {
+  text-align: center; /* Вирівнюємо вміст по центру */
+  margin-bottom: 50px;
+}
+.containerdoc p {
+  margin-bottom: 20px; /* Відступ вниз від тексту */
+}
+
+/*Кнопка для скачування ворд документу*/
+.download-button {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.download-button:hover {
+  background-color: #45a049;
+}
+
+/*Випадаючий список сортування*/
+.custom-select2 {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.custom-select-container{
+  margin-top: 20px;
+}

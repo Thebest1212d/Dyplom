@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - Час</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+<!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+  
+  
+          'heading': 'Час',
+          'releaseYear': 'Рік випуску:',
+          'genre': '<strong>Жанр:</strong> Екшн/Трилер',
+          'directors': '<strong>Режисер:</strong> Ендрю Нікол',
+          'cast': '<strong>У ролях:</strong> Аманда Сейфрід, Джастін Тімберлейк, Олівія Вайлд, Меттью Бомер, Кілліан Мерфі, Єлена Сатіне',
+          'duration': '<strong>Тривалість:</strong> 109 хвилин',
+          'country': '<strong>Країна:</strong> США',
+          'language': '<strong>Озвучення:</strong> Російська',
+          'description': '<strong>Опис:</strong> У фільмі "Час" ви зануритесь у захоплюючу подорож у світ, де кожна секунда має неймовірне значення. Сюжет розгортається навколо головного героя, який випадково отримує можливість контролювати час. Ця надзвичайна здатність відкриває перед ним безмежні можливості, але разом із цим належить велика відповідальність. Він повинен приймати важливі рішення, щоб врятувати не лише себе, а й тих, кого він любить. У світі, де кожен момент може бути останнім, герой ризикує усім, щоб змінити власну долю та долі інших. Проте час, як завжди, є непередбачуваним і відстежує кожен крок. Під час цієї епічної подорожі герой зіштовхується з небезпекою, інтригою та надзвичайними випробуваннями. Заворажливий сюжет, напружені сцени та несподівані повороти дійсно захоплюють увагу глядача. Кожна сцена пронизана емоціями та небезпекою, кожен діалог наповнений значенням. "Час" - це не лише фільм, це подорож у світ загадок і пригод, де кожен момент може вирішити все. Готуйтеся відчути власний пульс, адже це не просто фільм, це спроба змінити власну долю та долі інших. Вирушайте у захоплюючу подорож разом із героєм та відчуйте, як час стає вашим союзником або ворогом.',
+        
+          'recommendation-heading': 'Що ще подивитися',
+        
+          'trailer-heading': 'Трейлер: Час',
+          'trailer-description': 'Підготуйтеся відчути пульс суцільного напруги та неймовірного відчуття скорочення часу у захоплюючому трейлері до фільму "Час"',
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+  
+  
+          // Переклад для фільму
+  
+          'heading': 'Time',
+          'releaseYear': 'Release Year:',
+          'genre': '<strong>Genre:</strong> Action/Thriller',
+          'directors': '<strong> Directors:</strong> Andrew Niccol',
+          'cast': '<strong>Cast:</strong> Amanda Seyfried, Justin Timberlake, Olivia Wilde, Matthew Bomer, Cillian Murphy, Elena Satine',
+          'duration': '<strong>Duration:</strong> 109 minutes',
+          'country': '<strong>Country:</strong> USA',
+          'language': '<strong>Language:</strong> Russian',
+          'description': '<strong>Description:</strong> In the film "Time," you will embark on a thrilling journey into a world where every second holds incredible significance. The plot revolves around the main character who accidentally gains the ability to control time. This extraordinary capability opens up endless possibilities for him, but it also comes with great responsibility. He must make crucial decisions to save not only himself but also those he loves. In a world where every moment could be the last, the hero risks everything to change his own fate and the fates of others. However, time, as always, is unpredictable and tracks every step. During this epic journey, the hero encounters danger, intrigue, and extraordinary trials. The captivating plot, tense scenes, and unexpected twists truly capture the audience\'s attention. Each scene is filled with emotion and danger, and every dialogue is laden with meaning. "Time" is more than just a film; it\'s a journey into a world of mysteries and adventures where every moment can determine everything. Prepare to feel your own pulse because this is not just a movie; it\'s an attempt to change one\'s own destiny and the destinies of others. Embark on an exciting journey with the hero and feel how time becomes your ally or enemy.', 
+  
+          'recommendation-heading': 'What else to watch',
+  
+          'trailer-heading': 'Trailer: Time',
+          'trailer-description': 'Get ready to feel the pulse of sheer tension and the incredible sensation of time compression in the thrilling trailer for the film "Time"',
+        },
+  };
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+      
+  
+      // Змінити текст для назви фільму
+      document.querySelector('.movie-details h2').textContent = selectedLang['heading'];
+  
+      document.querySelector('.movie-details p:nth-child(3)').innerHTML = '<strong>' + selectedLang['releaseYear'] + '</strong> 2020';
+      document.querySelector('.movie-details p:nth-child(4)').innerHTML = selectedLang['genre'];
+      document.querySelector('.movie-details p:nth-child(5)').innerHTML = selectedLang['directors'];
+      document.querySelector('.movie-details p:nth-child(6)').innerHTML = selectedLang['cast'];
+      document.querySelector('.movie-details p:nth-child(7)').innerHTML = selectedLang['duration'];
+      document.querySelector('.movie-details p:nth-child(8)').innerHTML = selectedLang['country'];
+      document.querySelector('.movie-details p:nth-child(9)').innerHTML = selectedLang['language'];
+      document.querySelector('.movie-details p:nth-child(10)').innerHTML = selectedLang['description'];
+  
+  
+      document.querySelector('.trailer-text h2').textContent = selectedLang['trailer-heading'];
+      document.querySelector('.trailer-text p').textContent = selectedLang['trailer-description'];
+
+      const recommendedMovies = document.querySelector('.recommended-movies h3');
+      recommendedMovies.textContent = translations[lang]['recommendation-heading'];
+  
+   
+      
+  }
+  </script>
+  
+  
+    <section class="movie">
+      <div class="movie-details">
+      <img src="images\time\Time.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+      <h2>Час</h2> <!-- Назва фільму -->
+      <p><strong>Рік випуску:</strong> 2011</p> <!-- Рік -->
+        <p><strong>Жанр:</strong> Екшн/Трилер</p> <!-- Жанр -->
+        <p><strong>Режисер:</strong> Ендрю Нікол</p>
+        <p><strong>У ролях:</strong> Аманда Сейфрід, Джастін Тімберлейк, Олівія Вайлд, Меттью Бомер, Кілліан Мерфі, Єлена Сатіне</p>
+        <p><strong>Тривалість:</strong> 109 хвилин</p> 
+        <p><strong>Країна:</strong> США</p>
+        <p><strong>Озвучення:</strong> Російська</p>
+        <p><strong>Опис:</strong> 
+
+         
+У фільмі "Час" ви зануритесь у захоплюючу подорож у світ, де кожна секунда має неймовірне значення. Сюжет розгортається навколо головного героя, який випадково отримує можливість контролювати час. Ця надзвичайна здатність відкриває перед ним безмежні можливості, але разом із цим належить велика відповідальність. Він повинен приймати важливі рішення, щоб врятувати не лише себе, а й тих, кого він любить.
+
+У світі, де кожен момент може бути останнім, герой ризикує усім, щоб змінити власну долю та долі інших. Проте час, як завжди, є непередбачуваним і відстежує кожен крок. Під час цієї епічної подорожі герой зіштовхується з небезпекою, інтригою та надзвичайними випробуваннями.
+
+Заворажливий сюжет, напружені сцени та несподівані повороти дійсно захоплюють увагу глядача. Кожна сцена пронизана емоціями та небезпекою, кожен діалог наповнений значенням. "Час" - це не лише фільм, це подорож у світ загадок і пригод, де кожен момент може вирішити все.
+
+Готуйтеся відчути власний пульс, адже це не просто фільм, це спроба змінити власну долю та долі інших. Вирушайте у захоплюючу подорож разом із героєм та відчуйте, як час стає вашим союзником або ворогом.</p>
+     
+</div>
+        <br>
+      </div>
+  
+     <!--  #region  Трейлер ютуба*/ -->
+  
+      <div class="players">
+      <div class="trailer-container">
+      <div class="trailer-text">
+        <h2>Трейлер: Час</h2>
+        <p>Підготуйтеся відчути пульс суцільного напруги та неймовірного відчуття скорочення часу у захоплюючому трейлері до фільму 'Час'</p>
+      </div>
+      <div class="player-container">
+        <div id="player"></div>
+       </div>
+     </div>
+    
+  <!-- Сценарій JavaScript для відтворення відео -->
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '500',
+        width: '800',
+        videoId: '3JIeH2bfkFk',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+    function onPlayerReady(event) {
+    }
+   </script>
+    
+      <!-- #endregion */ -->
+  
+      <div class="video-container">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="images\time\video.jpg"
+          data-setup="{}">
+          <source src="films\Time\Time.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+           </p>
+         </video>
+        </div>
+      </div>
+    
+     <!-- Рекомендовані фільми -->
+     <div class="recommended-movies">
+      <h3>Що ще подивитися</h3>
+      <div class="movie-logos">
+          <div>
+              <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+              <!--<p><strong>Час</strong></p>-->
+          </div>
+          <div>
+              <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+              <!--<p><strong>13 район</strong></p>-->
+          </div>
+          <div>
+              <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+              <!--<p><strong>Чорний Ворон</strong></p>-->
+          </div>
+          <div>
+              <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+              <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+          </div>
+          <div>
+              <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+              <!--<p><strong>Шаолинь</strong></p>-->
+          </div>
+      </div>
+  </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Телефон:+380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - Bridge to Terabithia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- Підключення необхідних стилів -->
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#movies" class="nav-link">Movies</a></li>
+            <li><a href="index.html#series" class="nav-link">Series</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">English Movies</a></li>
+            <li><a href="Top100.html" class="nav-link">Top 100</a></li>
+            <li><a href="index.html#about" class="nav-link">About Author</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <section class="movie">
+    <div class="movie-details">
+    <img src="images\Bridge to Terabithia\Bridge to Terabithia.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+    <h2>Bridge to Terabithia</h2> <!-- Назва фільму -->
+    <p><strong>Release Year:</strong> 2007</p> <!-- Рік -->
+      <p><strong>Genre:</strong> Children's/Adventure</p> <!-- Жанр -->
+      <p><strong>Directors:</strong> Gabor Chupo</p>
+      <p><strong>Cast:</strong> Joshua Hutcherson, AnnaSophia Robb, Bailey Madison, Robert Patrick, Kate Butler, Zooey Deschanel</p>
+      <p><strong>Duration:</strong> 96 minutes</p> 
+      <p><strong>Country:</strong> USA</p>
+      <p><strong>Language:</strong> russian</p>
+      <p><strong>Description:</strong>  
+
+       
+        "Bridge to Terabithia" is a heartwarming fantasy drama that takes viewers on an extraordinary journey of friendship and imagination. Adapted from the beloved novel by Katherine Paterson, the film follows the story of Jess Aarons, a young outsider struggling to find his place in the world. When Leslie Burke, a free-spirited new girl, moves in next door, Jess discovers a kindred spirit and an unexpected friend.
+
+        Together, Jess and Leslie create Terabithia, a magical kingdom in the woods where they reign as king and queen, escaping the challenges of reality and embracing the power of their imagination. In Terabithia, they encounter fantastical creatures, face daring adventures, and confront their deepest fears.
+        
+        As their friendship blossoms and their bond grows stronger, Jess and Leslie learn valuable lessons about courage, kindness, and the importance of being true to oneself. But when tragedy strikes, Jess must find the strength to carry on Leslie's legacy and honor the memories they shared in Terabithia.
+        
+        "Bridge to Terabithia" is a poignant tale of friendship, imagination, and the transformative power of love. With its captivating storytelling and heartfelt performances, this film reminds audiences of the magic that exists within each of us and the beauty of forging connections that transcend time and space.</p>
+   
+</div>
+      <br>
+    </div>
+
+
+
+
+
+  
+     <!--  #region  Трейлер ютуба*/ -->
+  
+     <div class="players">
+      <div class="trailer-container">
+      <div class="trailer-text">
+        <h2>Trailer: Bridge to Terabithia</h2>
+        <p>Experience the adrenaline and humor in the exciting trailer for "Bridge to Terabithia".</p>
+      </div>
+      <div class="player-container">
+        <div id="player"></div>
+       </div>
+     </div>
+    
+  <!-- Сценарій JavaScript для відтворення відео -->
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '500',
+        width: '800',
+        videoId: 'T2TDSEG57hI',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+    function onPlayerReady(event) {
+    }
+   </script>
+    
+      <!-- #endregion */ -->
+  
+      <div class="video-container">
+       <!-- <div class="video-info">
+          <h3>Дивитися онлайн: Bridge to Terabithia</h3>
+        </div>-->
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="images/Bridge to Terabithia/video.jpg"
+          data-setup="{}">
+          <source src="films\English\Bridge to Terabithia.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+           </p>
+         </video>
+        </div>
+      </div>
+    
+     <!-- Рекомендовані фільми -->
+     <div class="recommended-movies">
+      <h3>What else to watch</h3>
+      <div class="movie-logos">
+          <div>
+              <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+              <!--<p><strong>Час</strong></p>-->
+          </div>
+          <div>
+              <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+              <!--<p><strong>13 район</strong></p>-->
+          </div>
+          <div>
+              <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+              <!--<p><strong>Чорний Ворон</strong></p>-->
+          </div>
+          <div>
+              <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+              <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+          </div>
+          <div>
+              <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+              <!--<p><strong>Шаолинь</strong></p>-->
+          </div>
+      </div>
+  </div>
+  </section>
+  
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Information</h3>
+        <p>For communication, collaboration, and inquiries:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Phone: +380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Social Media</h3>
+        <p>Join me on social media to stay updated on news and updates:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+          <!-- Додайте посилання на ваші інші соціальні мережі -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; © 2023 All rights reserved | Design and Development: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

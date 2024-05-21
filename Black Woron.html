@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - Чорний Ворон</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+<!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+  
+  
+          'heading': 'Чорний Ворон',
+          'releaseYear': 'Рік випуску:',
+          'genre': '<strong>Жанр:</strong> Воєнний/Драма',
+          'directors': '<strong>Режисер:</strong> Тарас Ткаченко',
+          'cast': '<strong>У ролях:</strong> Тарас Цимбалюк, Павло Москаль, Данило Мірешкін, Ксенія Данилова, Зоряна Марченко, Андрій Мостренко',
+          'duration': '<strong>Тривалість:</strong> 91 хвилина',
+          'country': '<strong>Країна:</strong> Україна',
+          'language': '<strong>Озвучення:</strong> українська',
+          'description': '<strong>Опис:</strong> «Чорний ворон» — повнометражний художній фільм виробництва «ТРК Студія 1+1» за однойменним романом-бестселером відомого українського письменника Василя Шкляра. 1921 рік. Російська Червона армія окупувала УНР, але українські повстанці в Холодному Яру продовжують партизанську боротьбу. Іван Чорноус намагається триматися осторонь війни, проте перешкоджає мародерству російського солдата на ринку. Начальника окупаційного штабу Птіцина відсторонюють через відсутність успіхів у боротьбі проти повстанців, його замінює Євдокімов. Іван з дружиною Тіною переховуються в дядька Митрофана. Отаман Кузьма доставляє пораненого бійця, якого вирішують відвезти до сліпої знахарки Явдохи. Євдокімов арештовує Іванового батька, Якова, та обіцяє зберегти йому життя, якщо Іван прийде до червоноармійців наступного дня. Батько просить Івана виконати вимоги окупантів. Той погоджується допомогти в пошуках повстанців, якщо батька відпустять. Але вночі Яків помирає через побої. Євдокімов застрелює допитувача, але не полишає планів дізнатися від Івана де перебувають повстанці. Поховавши батька, Іван вирішує помститися. Іван відвідує табір повстанців, щоб приєднатися до них. Спершу до нього ставляться з підозрою, але беруть на завдання — влаштувати засідку на загін червоноармійців. Багатьох ворогів убивають, решту беруть у полон. Командир загону пропонує стати агентом повстанців, і щоб довести свою вірність, страчує товаришів. Іван застрелює зрадника, лишивши живим останнього з загону, китайця Ходю. Тепер Івана приймають у лави повстанців, а він бере собі псевдо «Чорний Ворон». Ходя також приєднується до них. Євдокімов організовує грабунок місцевого населення. Іван бере участь у облаві на червоноармійців. У результаті вдається схопити Птіцина та його супутницю, перукарку Цилю. Птіцин просить помилувати його, апелюючи до того, що в нього предки українці, і його відпускають. Частина повстанців, повіривши агітці, здаються окупантам і отримують амністію. В обмін на це Євдокімов вимагає зняти дзвони з монастиря, що використовуються для оповіщення в Холодному Яру. Іван і повстанка Дося приходять до відлюдника Варфоломія, що живе в монастирі. Загін Євдокімова захоплює і обшукує монастир у пошуках казни повстанців. Поранених, яких лікували в монастирі, Євдокімов наказує добити. Тіну забирають червоноармійці, а Дося тікає через підземний хід з Варфоломієм. Дося приносить у табір повстанців новину про захоплення монастиря. Іван з групою товаришів уночі здійснює напад на червоноармійців, але Тіни не знаходить. Сотник Завірюха розуміє, що наведення на монастир дала Циля, і хоче вбити її, але не наважується. Циля підмовляє його здати отаманів задля припинення війни. Він прибуває до повстанців і закликає їх скликати отаманську раду, щоб підняти повстання по всій Україні. Іван проте скептично ставиться до цього задуму, підозрюючи про пастку. Його підозри виявляються правдиві, повстанські отамани приходять прямо у засідку червоноармійців. Уцілілі бійці розуміють, що повстання більше неможливе, і припиняють боротьбу: здаються окупантам або виїжджають за кордон. Іван і Ходя лишаються єдині в таборі у Холодному Яру. Євдокімов вимагає від Тіни, щоб вона публічно зреклася чоловіка, в разі відмови він погрожує їй насильним абортом. Кузьма здогадується, що Завірюха зрадник, убиває його та Цилю, після чого з Досею приходить до Івана. Повстанці вирішують атакувати окупантів, коли ті святкуватимуть річницю Жовтневого перевороту. Митрофан проводить їх на цукровий завод, де відбуватиметься дійство, зокрема публічне каяття полонених отаманів і Тіни. Повстанці озброюють полонених, але в бою з охоронцями гине Ходя. Птіцин погрожує вбити Тіну, та його заколює ножем Дося. Іван з товаришами застрелюють червоноармійців і відпускають глядачів. Окупанти стягують до заводу підкріплення, повстанці гинуть, Івану, Тіні та Досі вдається вибратися. Зібравши інших бійців, Іван продовжує боротьбу принаймні до 1925 року.',
+          'recommendation-heading': 'Що ще подивитися',
+        
+          'trailer-heading': 'Трейлер: Чорний Ворон',
+          'trailer-description': 'Приготуйтеся відчути пульс адреналіну та загадковості у захоплюючому трейлері до фільму "Чорний Ворон"',
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+  
+  
+          // Переклад для фільму
+  
+          'heading': 'Black Raven',
+          'releaseYear': 'Release Year:',
+          'genre': '<strong>Genre:</strong> War/Drama',
+          'directors': '<strong> Directors:</strong> Taras Tkachenko',
+          'cast': '<strong>Cast:</strong> Taras Tsimbalyuk, Pavlo Moskal, Danylo Mireshkin, Kseniya Danilova, Zoryana Marchenko, Andriy Mostrenko',
+          'duration': '<strong>Duration:</strong> 91 minutes',
+          'country': '<strong>Country:</strong> Ukraine',
+          'language': '<strong>Language:</strong> ukrainian',
+          'description': '<strong>Description:</strong> "Black Raven" is a feature film produced by "TRK Studio 1+1" based on the eponymous best-selling novel by the renowned Ukrainian writer Vasyl Shkliar. 1921. The Russian Red Army has occupied the Ukrainian People\'s Republic, but Ukrainian insurgents in Holodny Yar continue their guerrilla warfare. Ivan Chornous tries to stay out of the war but interferes with the looting of a Russian soldier at the market. The head of the occupation staff, Ptitsyn, is removed for failing to succeed against the insurgents, and he is replaced by Yevdokimov. Ivan and his wife Tina hide at Uncle Mytrofan\'s place. Ataman Kuzma brings a wounded fighter, whom they decide to take to the blind healer Yavdokha. Yevdokimov arrests Ivan\'s father, Yakov, and promises to spare his life if Ivan joins the Red Army the next day. The father asks Ivan to comply with the occupiers\' demands. He agrees to help search for insurgents if they release his father. But at night, Yakov dies from the beatings. Yevdokimov shoots the interrogator but still plans to find out from Ivan where the insurgents are. After burying his father, Ivan decides to seek revenge. Ivan visits the insurgents\' camp to join them. At first, he is treated with suspicion, but they give him a task - to set up an ambush for the Red Army unit. Many enemies are killed, and the rest are taken prisoner. The commander of the unit suggests that Ivan become an agent of the insurgents, and to prove his loyalty, he executes his comrades. Ivan shoots the traitor, leaving the last member of the unit alive, a Chinese man named Khodya. Now Ivan is accepted into the ranks of the insurgents, and he takes on the alias "Black Raven." Khodya also joins them. Yevdokimov organizes a robbery of the local population. Ivan takes part in the raid on the Red Army soldiers. As a result, they manage to capture Ptitsyn and his companion, the hairdresser Tsilya. Ptitsyn asks to be pardoned, appealing to his Ukrainian ancestors, and they let him go. Some of the insurgents, believing the agitator, surrender to the occupiers and receive amnesty. In exchange, Yevdokimov demands the bells be removed from the monastery, which are used to alert in Holodny Yar.Ivan and the insurgent Dosya go to the recluse Varfolomey, who lives in the monastery. Yevdokimov\'s unit captures and searches the monastery in search of the insurgents\' hiding place. The wounded, who were being treated in the monastery, Yevdokimov orders to be finished off. Tsilya is taken away by the Red Army soldiers, and Dosya escapes through an underground passage with Varfolomey.Dosya brings news to the insurgents about the capture of the monastery. Ivan and a group of comrades attack the Red Army soldiers at night, but Tina is not found. Captain Zaviryukha understands that Tsilya gave away the monastery and wants to kill her but does not dare. Tsilya persuades him to surrender the leaders to stop the war. He arrives at the insurgents and calls on them to convene an insurgent council to start an uprising throughout Ukraine. Ivan, however, is skeptical of this plan, suspecting it to be a trap.His suspicions turn out to be true - the insurgent leaders walk right into the Red Army ambush. The surviving fighters realize that the rebellion is no longer possible and stop fighting: they surrender to the occupiers or leave the country. Ivan and Khodya remain alone in the camp in Holodny Yar. Yevdokimov demands that Tina publicly renounce her husband; if she refuses, he threatens her with forced abortion.Kuzma realizes that Zaviryukha is a traitor, kills him and Tsilya, and then comes with Dosya to Ivan. The insurgents decide to attack the occupiers when they celebrate the anniversary of the October Revolution. Mytrofan leads them to the sugar factory, where the event will take place, including the public repentance of the captured leaders and Tina. The insurgents arm the captives, but in the battle with the guards, Khodya dies. Ptitsyn threatens to kill Tina, but Dosya stabs him with a knife. Ivan and his comrades shoot the Red Army soldiers and release the viewers. The occupiers call for reinforcements to the factory, the insurgents die, but Ivan, Tina, and Dosya manage to escape.Gathering other fighters, Ivan continues the struggle at least until 1925.', 
+          'recommendation-heading': 'What else to watch',
+  
+          'trailer-heading': 'Trailer: Black Raven',
+          'trailer-description': 'Get ready to feel the pulse of adrenaline and mystery in the exciting trailer for the movie "Black Raven."',
+        },
+  };
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+      
+  
+      // Змінити текст для назви фільму
+      document.querySelector('.movie-details h2').textContent = selectedLang['heading'];
+  
+      document.querySelector('.movie-details p:nth-child(3)').innerHTML = '<strong>' + selectedLang['releaseYear'] + '</strong> 2020';
+      document.querySelector('.movie-details p:nth-child(4)').innerHTML = selectedLang['genre'];
+      document.querySelector('.movie-details p:nth-child(5)').innerHTML = selectedLang['directors'];
+      document.querySelector('.movie-details p:nth-child(6)').innerHTML = selectedLang['cast'];
+      document.querySelector('.movie-details p:nth-child(7)').innerHTML = selectedLang['duration'];
+      document.querySelector('.movie-details p:nth-child(8)').innerHTML = selectedLang['country'];
+      document.querySelector('.movie-details p:nth-child(9)').innerHTML = selectedLang['language'];
+      document.querySelector('.movie-details p:nth-child(10)').innerHTML = selectedLang['description'];
+  
+  
+      document.querySelector('.trailer-text h2').textContent = selectedLang['trailer-heading'];
+      document.querySelector('.trailer-text p').textContent = selectedLang['trailer-description'];
+
+      const recommendedMovies = document.querySelector('.recommended-movies h3');
+      recommendedMovies.textContent = translations[lang]['recommendation-heading'];
+  
+   
+      
+  }
+  </script>
+  
+  
+    <section class="movie">
+      <div class="movie-details">
+      <img src="images\black woron\logo.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+      <h2>Чорний Ворон</h2> <!-- Назва фільму -->
+      <p><strong>Рік випуску:</strong> 2019</p> <!-- Рік -->
+        <p><strong>Жанр:</strong> Воєнний/Драма</p> <!-- Жанр -->
+        <p><strong>Режисер:</strong> Тарас Ткаченко</p>
+        <p><strong>У ролях:</strong> Тарас Цимбалюк, Павло Москаль, Данило Мірешкін, Ксенія Данилова, Зоряна Марченко, Андрій Мостренко</p>
+        <p><strong>Тривалість:</strong> 91 хвилина</p> 
+        <p><strong>Країна:</strong> Україна</p>
+        <p><strong>Озвучення:</strong> українська</p>
+        <p><strong>Опис:</strong> 
+
+         
+          «Чорний ворон» — повнометражний художній фільм виробництва «ТРК Студія 1+1» за однойменним романом-бестселером відомого українського письменника Василя Шкляра. 1921 рік. Російська Червона армія окупувала УНР, але українські повстанці в Холодному Яру продовжують партизанську боротьбу. Іван Чорноус намагається триматися осторонь війни, проте перешкоджає мародерству російського солдата на ринку. Начальника окупаційного штабу Птіцина відсторонюють через відсутність успіхів у боротьбі проти повстанців, його замінює Євдокімов. Іван з дружиною Тіною переховуються в дядька Митрофана. Отаман Кузьма доставляє пораненого бійця, якого вирішують відвезти до сліпої знахарки Явдохи.
+
+          Євдокімов арештовує Іванового батька, Якова, та обіцяє зберегти йому життя, якщо Іван прийде до червоноармійців наступного дня. Батько просить Івана виконати вимоги окупантів. Той погоджується допомогти в пошуках повстанців, якщо батька відпустять. Але вночі Яків помирає через побої. Євдокімов застрелює допитувача, але не полишає планів дізнатися від Івана де перебувають повстанці. Поховавши батька, Іван вирішує помститися.
+          
+          Іван відвідує табір повстанців, щоб приєднатися до них. Спершу до нього ставляться з підозрою, але беруть на завдання — влаштувати засідку на загін червоноармійців. Багатьох ворогів убивають, решту беруть у полон. Командир загону пропонує стати агентом повстанців, і щоб довести свою вірність, страчує товаришів. Іван застрелює зрадника, лишивши живим останнього з загону, китайця Ходю. Тепер Івана приймають у лави повстанців, а він бере собі псевдо «Чорний Ворон». Ходя також приєднується до них.
+          
+          Євдокімов організовує грабунок місцевого населення. Іван бере участь у облаві на червоноармійців. У результаті вдається схопити Птіцина та його супутницю, перукарку Цилю. Птіцин просить помилувати його, апелюючи до того, що в нього предки українці, і його відпускають. Частина повстанців, повіривши агітці, здаються окупантам і отримують амністію. В обмін на це Євдокімов вимагає зняти дзвони з монастиря, що використовуються для оповіщення в Холодному Яру.
+          
+          Іван і повстанка Дося приходять до відлюдника Варфоломія, що живе в монастирі. Загін Євдокімова захоплює і обшукує монастир у пошуках казни повстанців. Поранених, яких лікували в монастирі, Євдокімов наказує добити. Тіну забирають червоноармійці, а Дося тікає через підземний хід з Варфоломієм.
+          
+          Дося приносить у табір повстанців новину про захоплення монастиря. Іван з групою товаришів уночі здійснює напад на червоноармійців, але Тіни не знаходить. Сотник Завірюха розуміє, що наведення на монастир дала Циля, і хоче вбити її, але не наважується. Циля підмовляє його здати отаманів задля припинення війни. Він прибуває до повстанців і закликає їх скликати отаманську раду, щоб підняти повстання по всій Україні. Іван проте скептично ставиться до цього задуму, підозрюючи про пастку.
+          
+          Його підозри виявляються правдиві, повстанські отамани приходять прямо у засідку червоноармійців. Уцілілі бійці розуміють, що повстання більше неможливе, і припиняють боротьбу: здаються окупантам або виїжджають за кордон. Іван і Ходя лишаються єдині в таборі у Холодному Яру. Євдокімов вимагає від Тіни, щоб вона публічно зреклася чоловіка, в разі відмови він погрожує їй насильним абортом.
+          
+          Кузьма здогадується, що Завірюха зрадник, убиває його та Цилю, після чого з Досею приходить до Івана. Повстанці вирішують атакувати окупантів, коли ті святкуватимуть річницю Жовтневого перевороту. Митрофан проводить їх на цукровий завод, де відбуватиметься дійство, зокрема публічне каяття полонених отаманів і Тіни. Повстанці озброюють полонених, але в бою з охоронцями гине Ходя. Птіцин погрожує вбити Тіну, та його заколює ножем Дося. Іван з товаришами застрелюють червоноармійців і відпускають глядачів. Окупанти стягують до заводу підкріплення, повстанці гинуть, Івану, Тіні та Досі вдається вибратися.
+          
+          Зібравши інших бійців, Іван продовжує боротьбу принаймні до 1925 року.</p>
+     
+</div>
+        <br>
+      </div>
+  
+     <!--  #region  Трейлер ютуба*/ -->
+  
+      <div class="players">
+      <div class="trailer-container">
+      <div class="trailer-text">
+        <h2>Трейлер: Чорний Ворон</h2>
+        <p>Приготуйтеся відчути пульс адреналіну та загадковості у захоплюючому трейлері до фільму "Чорний Ворон"</p>
+      </div>
+      <div class="player-container">
+        <div id="player"></div>
+       </div>
+     </div>
+    
+  <!-- Сценарій JavaScript для відтворення відео -->
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '500',
+        width: '800',
+        videoId: 'f6LogImdzfw',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+    function onPlayerReady(event) {
+    }
+   </script>
+    
+      <!-- #endregion */ -->
+  
+      <div class="video-container">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="images\black woron\video.jpg"
+          data-setup="{}">
+          <source src="films\black woron\Black.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+           </p>
+         </video>
+        </div>
+      </div>
+    
+     <!-- Рекомендовані фільми -->
+     <div class="recommended-movies">
+      <h3>Що ще подивитися</h3>
+      <div class="movie-logos">
+          <div>
+              <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+              <!--<p><strong>Час</strong></p>-->
+          </div>
+          <div>
+              <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+              <!--<p><strong>13 район</strong></p>-->
+          </div>
+          <div>
+              <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+              <!--<p><strong>Чорний Ворон</strong></p>-->
+          </div>
+          <div>
+              <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+              <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+          </div>
+          <div>
+              <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+              <!--<p><strong>Шаолинь</strong></p>-->
+          </div>
+      </div>
+  </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Телефон:+380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+          <!-- Додайте посилання на ваші інші соціальні мережі -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільми</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+
+
+</head>
+<body class="home-page">
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="#movies" class="nav-link">Фільми</a></li>
+            <li><a href="#series" class="nav-link">Серіали</a></li>
+            <li><a href="#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+      </ul>
+    </nav>  
+
+    <div class="theme-switch">
+
+      <input type="text" id="searchInput" placeholder="Enter text to search" oninput="searchOnInput()">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua" selected>UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+      
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="content">
+      <h2>Ласкаво просимо на наш сайт!</h2>
+      <p>Тут ви можете знайти великий вибір різних фільмів для перегляду.</p>
+    </section>
+
+
+    <section class="content" style="display: flex; align-items: center;">
+      <p class="sort1" style="margin-right: 10px;">Сортування:</p>
+      <div class="custom-select-container" style="margin-right: 10px;">
+        <select id="sortSelect" onchange="sortFilms()" class="custom-select2">
+          <option value="" disabled selected>Рік</option>
+          <option value="yearDesc">За роком випуску (новіші)</option>
+          <option value="yearAsc">За роком випуску (старіші)</option>
+        </select>
+      </div>
+      <div class="custom-select-container" style="margin-right: 10px;">
+        <select id="genreSelect" onchange="filterByGenre()" class="custom-select2">
+          <option value="" selected>Всі жанри</option>
+          <option value="Драма">Драма</option>
+          <option value="Екшн">Екшн</option>
+          <option value="Кримінал">Кримінал</option>
+          <option value="Фантастика">Фантастика</option>
+          <option value="Комедія">Комедія</option>
+          <option value="Пригоди">Пригоди</option>
+        </select>
+      </div>
+      <div class="custom-select-container" style="margin-right: 10px;">
+        <select id="countrySelect" onchange="filterByCountry()" class="custom-select2">
+          <option value="" selected>Всі країни</option>
+          <option value="Франція">Франція</option>
+          <option value="США">США</option>
+          <option value="Китай">Китай</option>
+          <option value="Україна">Україна</option>
+        </select>
+      </div>
+      <div class="custom-select-container" style="margin-right: 10px;">
+        <select id="languageSelect" onchange="filterByLanguage()" class="custom-select2">
+          <option value="" selected>Всі мови</option>
+          <option value="Українська">Українська</option>
+          <option value="Російська">Російська</option>
+          <option value="Англійська">Англійська</option>
+        </select>
+      </div>
+      <div class="custom-select-container">
+        <select id="categorySelect" onchange="filterByCategory()" class="custom-select2">
+          <option value="" selected>Всі категорії</option>
+          <option value="Фільми">Фільми</option>
+          <option value="Серіали">Серіали</option>
+          <option value="Фільми англійською">Фільми англійською</option>
+        </select>
+      </div>
+    </section>
+    
+
+<!-- Модальне вікно для повідомлення про відсутність результатів -->
+<div id="noResultsMessage" class="no-results-message" style="display: none;">Фільм не знайдено. Будь ласка, змініть ваш запит або перевірте правильність написання назви фільму</div>
+
+    <section id="movies">
+      <section class="content">
+      <h2>Фільми</h2>
+     
+        <!-- Додайте елементи для фільтрації фільмів ( реєстрація) -->
+  
+<!-- Фільми -->
+
+<div class="movies-list">
+  <div class="movie" data-year="2019" country="Україна" genre="Драма" category="Фільми" language="Українська">
+    <a href="Black Woron.html">
+      <img src="images/Black Woron/logo.jpg">
+      <h3 data-translation-key="Чорний Ворон">Чорний Ворон</h3>
+    </a>
+  </div> 
+  <div class="movie" data-year="2004" country="Франція" genre="Кримінал" category="Фільми" language="Російська">
+    <a href="13 rajon.html">
+      <img src="images/13 rajon/13 rajon.jpg">
+      <h3 data-translation-key="13-ий район">13-ий район</h3>
+    </a>
+  </div> 
+  <div class="movie" data-year="2011" country="Китай" genre="Екшн" category="Фільми" language="Російська">
+    <a href="shaolin.html">
+      <img src="images/shaolin/logo.jpg">
+      <h3 data-translation-key="Шаолинь">Шаолинь</h3>
+    </a>
+  </div> 
+  <div class="movie" data-year="2011" country="США" genre="Фантастика" category="Фільми" language="Російська">
+    <a href="time.html">
+      <img src="images/time/Time.jpg">
+      <h3 data-translation-key="Час">Час</h3>
+    </a>
+  </div> 
+  <div class="movie" data-year="2020" country="США" genre="Комедія" category="Фільми" language="Російська">
+    <a href="Badboys.html">
+      <img src="images/Bad Boys/logo.jpg">
+      <h3 data-translation-key="Погані хлопці назавжди">Погані хлопці назавжди</h3>
+    </a>
+  </div>   
+</div>
+  </div>
+</section>
+
+
+  <section id="series" class="content">
+    <h2>Серіали</h2>
+    <div class="movies-list">
+      <div class="movie" data-year="2020" country="Україна" genre="Екшн" category="Серіали" language="Українська">
+      <a href="DVRZ.html">
+        <img src="images/DVRZ/logo.jpg">
+        <h3 data-translation-key="Дільничний з ДВРЗ">Дільничний з ДВРЗ</h3>
+      </a>
+    </div>
+  </div>
+  </section>
+
+  <section id="english-movies" class="content">
+    <h2>Фільми англійською</h2>
+    <div class="movies-list">
+      <div class="movie" data-year="2007" country="США" genre="Пригоди" category="Фільми англійською" language="Англійська">
+      <a href="Bridge to Terabithia.html">
+        <img src="images/Bridge to Terabithia/Bridge to Terabithia.jpg">
+        <h3 data-translation-key="Bridge to Terabithia">Bridge to Terabithia</h3>
+      </a>
+    </div>
+
+  </div>
+    </section>
+  </section>
+
+    <section id="about" class="content">
+      <h2>Про автора</h2>
+      <p>Привіт, я студент, що вивчає програмування в Київському Коледжі Зв'язку та присвятив цей сайт своїй дипломній роботі. Я захоплююся розробкою веб-сайтів та створенням крутих інтерфейсів.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Phone:+380982023020
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script src="Translation.js"></script>
+</body>
+</html>

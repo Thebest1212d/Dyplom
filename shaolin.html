@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - Шаолинь</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+<!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+  
+  
+          'heading': 'Шаолинь',
+          'releaseYear': 'Рік випуску:',
+          'genre': '<strong>Жанр:</strong> Екшн/Драма',
+          'directors': '<strong>Режисер:</strong> Бенні Чан',
+          'cast': '<strong>У ролях:</strong> Джекі Чан, Вудао, Енді Лау, Джекі Ву, Ши Яньнен, Цзін Конг',
+          'duration': '<strong>Тривалість:</strong> 131 хвилина',
+          'country': '<strong>Країна:</strong> Китай',
+          'language': '<strong>Озвучення:</strong> Російська',
+          'description': '<strong>Опис:</strong> У фільмі "Шаолінь" вас чекає незабутня подорож у серце давньої Китайської імперії, де ви зануритесь у вирій бойових мистецтв, витканого з ниток мудрості, духовності та мистецтва самовдосконалення. Попереджені, кожна кадр цього фільму – це величний шедевр, який сповнений не тільки вражаючих боїв, а й мудрості стародавніх майстрів, що дарують вам ключі до внутрішнього гармонійного розвитку. Приклавши величезний труд, режисер і акторський склад перенесуть вас у світ, де гармонія та баланс - це не просто слова, а філософія життя. Ця епічна кіноодісея відкриє перед вами таємниці монастиря Шаолінь, де сила не лише у боротьбі, але й у здатності зрозуміти себе та світ навколо. Щоразу, коли ви переглядаєте цей фільм, ви занурюєтеся у вирій майстерності, в якому кожна деталь є важливою ланкою у величному ланцюжку Шаолінського мистецтва. Вирушайте у захоплюючу подорож, де кожна кадр – це експеримент, кожна сцена – це виклик для вашого інтелекту та духу, а кожен персонаж – це відображення різних аспектів людської душі. "Шаолінь" - це не просто фільм, це дослідження глибини індивідуальності, природи людини та її потенціалу. Приготуйтеся до пригоди, що змінить ваше бачення світу, розкриє таємниці бойових мистецтв та відкриє шлях до нових висот самопізнання та внутрішньої сили. Відчуйте енергію, що пронизує кожен кадр, та дайтеся поглибитися емоціям, що створюють істинне шаолінське мистецтво.',
+        
+          'recommendation-heading': 'Що ще подивитися',
+        
+          'trailer-heading': 'Трейлер: Шаолинь',
+          'trailer-description': 'Відчуйте дух древнього мистецтва бойових мистецтв у захоплюючому трейлері до фільму',
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+  
+  
+          // Переклад для фільму
+  
+          'heading': 'Shaolin',
+          'releaseYear': 'Release Year:',
+          'genre': '<strong>Genre:</strong> Action/Drama',
+          'directors': '<strong> Directors:</strong> Benny Chan',
+          'cast': '<strong>Cast:</strong> Jackie Chan, Wu Dao, Andy Lau, Jackie Wu, Shi Yan Neng, Jin Kong',
+          'duration': '<strong>Duration:</strong> 131 minutes',
+          'country': '<strong>Country:</strong> China',
+          'language': '<strong>Language:</strong> Russian',
+          'description': '<strong>Description:</strong> In the film "Shaolin," you will embark on an unforgettable journey into the heart of ancient China, where you will immerse yourself in the realm of martial arts woven from threads of wisdom, spirituality, and the art of self-improvement. Be warned, every frame of this film is a magnificent masterpiece, filled not only with stunning battles but also with the wisdom of ancient masters who provide you with the keys to inner harmonious development. With tremendous effort, the director and cast will transport you to a world where harmony and balance are not just words but a philosophy of life. This epic cinematic odyssey will reveal to you the secrets of the Shaolin monastery, where strength lies not only in combat but also in the ability to understand oneself and the world around. Each time you watch this film, you delve into a realm of mastery where every detail is a crucial link in the magnificent chain of Shaolin art. Embark on an exhilarating journey where each frame is an experiment, each scene is a challenge to your intellect and spirit, and each character is a reflection of different aspects of the human soul. "Shaolin" is not just a movie; it is an exploration of the depth of individuality, human nature, and its potential. Prepare for an adventure that will change your perception of the world, uncover the secrets of martial arts, and open the path to new heights of self-discovery and inner strength. Feel the energy that permeates each frame and let yourself be immersed in the emotions that create true Shaolin art.', 
+  
+          'recommendation-heading': 'What else to watch',
+  
+          'trailer-heading': 'Trailer: Shaolin',
+          'trailer-description': 'Feel the spirit of ancient martial arts in the exciting trailer for the film',
+        },
+  };
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+      
+  
+      // Змінити текст для назви фільму
+      document.querySelector('.movie-details h2').textContent = selectedLang['heading'];
+  
+      document.querySelector('.movie-details p:nth-child(3)').innerHTML = '<strong>' + selectedLang['releaseYear'] + '</strong> 2020';
+      document.querySelector('.movie-details p:nth-child(4)').innerHTML = selectedLang['genre'];
+      document.querySelector('.movie-details p:nth-child(5)').innerHTML = selectedLang['directors'];
+      document.querySelector('.movie-details p:nth-child(6)').innerHTML = selectedLang['cast'];
+      document.querySelector('.movie-details p:nth-child(7)').innerHTML = selectedLang['duration'];
+      document.querySelector('.movie-details p:nth-child(8)').innerHTML = selectedLang['country'];
+      document.querySelector('.movie-details p:nth-child(9)').innerHTML = selectedLang['language'];
+      document.querySelector('.movie-details p:nth-child(10)').innerHTML = selectedLang['description'];
+  
+  
+      document.querySelector('.trailer-text h2').textContent = selectedLang['trailer-heading'];
+      document.querySelector('.trailer-text p').textContent = selectedLang['trailer-description'];
+
+      const recommendedMovies = document.querySelector('.recommended-movies h3');
+      recommendedMovies.textContent = translations[lang]['recommendation-heading'];
+  
+   
+      
+  }
+  </script>
+  
+  
+    <section class="movie">
+      <div class="movie-details">
+      <img src="images\shaolin\logo.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+      <h2>Шаолинь</h2> <!-- Назва фільму -->
+      <p><strong>Рік випуску:</strong> 2011</p> <!-- Рік -->
+        <p><strong>Жанр:</strong> Екшн/Драма</p> <!-- Жанр -->
+        <p><strong>Режисер:</strong> Бенні Чан</p>
+        <p><strong>У ролях:</strong> Джекі Чан, Вудао, Енді Лау, Джекі Ву, Ши Яньнен, Цзін Конг</p>
+        <p><strong>Тривалість:</strong> 131 хвилина</p> 
+        <p><strong>Країна:</strong> Китай</p>
+        <p><strong>Озвучення:</strong> Російська</p>
+        <p><strong>Опис:</strong> 
+
+          У фільмі "Шаолінь" вас чекає незабутня подорож у серце давньої Китайської імперії, де ви зануритесь у вирій бойових мистецтв, витканого з ниток мудрості, духовності та мистецтва самовдосконалення. Попереджені, кожна кадр цього фільму – це величний шедевр, який сповнений не тільки вражаючих боїв, а й мудрості стародавніх майстрів, що дарують вам ключі до внутрішнього гармонійного розвитку.
+
+          Приклавши величезний труд, режисер і акторський склад перенесуть вас у світ, де гармонія та баланс - це не просто слова, а філософія життя. Ця епічна кіноодісея відкриє перед вами таємниці монастиря Шаолінь, де сила не лише у боротьбі, але й у здатності зрозуміти себе та світ навколо. Щоразу, коли ви переглядаєте цей фільм, ви занурюєтеся у вирій майстерності, в якому кожна деталь є важливою ланкою у величному ланцюжку Шаолінського мистецтва.
+          
+          Вирушайте у захоплюючу подорож, де кожна кадр – це експеримент, кожна сцена – це виклик для вашого інтелекту та духу, а кожен персонаж – це відображення різних аспектів людської душі. "Шаолінь" - це не просто фільм, це дослідження глибини індивідуальності, природи людини та її потенціалу.
+          
+          Приготуйтеся до пригоди, що змінить ваше бачення світу, розкриє таємниці бойових мистецтв та відкриє шлях до нових висот самопізнання та внутрішньої сили. Відчуйте енергію, що пронизує кожен кадр, та дайтеся поглибитися емоціям, що створюють істинне шаолінське мистецтво.</p>
+     </div>
+        <br>
+      </div>
+  
+     <!--  #region  Трейлер ютуба*/ -->
+  
+      <div class="players">
+      <div class="trailer-container">
+      <div class="trailer-text">
+        <h2>Трейлер: Шаолинь</h2>
+        <p>Відчуйте дух древнього мистецтва бойових мистецтв у захоплюючому трейлері до фільму</p>
+      </div>
+      <div class="player-container">
+        <div id="player"></div>
+       </div>
+     </div>
+    
+     <!-- Сценарій JavaScript для відтворення відео -->
+     <script>
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '500',
+          width: '800',
+          videoId: 'x4ECZke1oac',
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+      function onPlayerReady(event) {
+      }
+     </script>
+    
+      <!-- #endregion */ -->
+  
+      <div class="video-container">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="images\shaolin\video.jpg"
+          data-setup="{}">
+          <source src="films\shaolin\shaolin.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+           </p>
+         </video>
+        </div>
+      </div>
+    
+     <!-- Рекомендовані фільми -->
+     <div class="recommended-movies">
+      <h3>Що ще подивитися</h3>
+      <div class="movie-logos">
+          <div>
+              <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+              <!--<p><strong>Час</strong></p>-->
+          </div>
+          <div>
+              <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+              <!--<p><strong>13 район</strong></p>-->
+          </div>
+          <div>
+              <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+              <!--<p><strong>Чорний Ворон</strong></p>-->
+          </div>
+          <div>
+              <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+              <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+          </div>
+          <div>
+              <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+              <!--<p><strong>Шаолинь</strong></p>-->
+          </div>
+      </div>
+  </div>
+
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Телефон:+380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+          <!-- Додайте посилання на ваші інші соціальні мережі -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

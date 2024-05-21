@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільм - 13 район</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+  <header>
+    <h1>КіноСвітUA</h1>
+    <nav>
+      <ul>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="index.html#movies" class="nav-link">Фільми</a></li>
+            <li><a href="index.html#series" class="nav-link">Серіали</a></li>
+            <li><a href="index.html#english-movies" class="nav-link">Фільми англійською</a></li>
+            <li><a href="Top100.html" class="nav-link">ТОП 100</a></li>
+            <li><a href="index.html#about" class="nav-link">Про автора</a></li>
+          </ul>
+        </nav>
+        
+      </ul>
+    </nav>  
+    <div class="theme-switch">
+
+      <div class="custom-select">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="ua">UA</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+<!-- JavaScript для перекладу -->
+<script>
+  function changeLanguage(lang) {
+      const translations = {
+  
+        'ua': {
+          //Зміна шапки
+          'home': 'Головна',
+          'movies': 'Фільми',
+          'series': 'Серіали',
+          'englishMovies': 'Фільми англійською',
+          'top100': 'ТОП 100',
+          'about': 'Про автора',
+    
+    
+          'contact-info': 'Контактна інформація',
+          'communication': 'Для спілкування, співпраці та запитань:',
+          'phone': 'Телефон:+380982023020',
+          'social-media': 'Соціальні мережі',
+          'join': 'Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:',
+          'all-rights': '© 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan',
+  
+  
+          'heading': '13-й район',
+          'releaseYear': 'Рік випуску:',
+          'genre': '<strong>Жанр:</strong> Екшн/Кримінал',
+          'directors': '<strong>Режисер:</strong> П\'єр Морель',
+          'cast': '<strong>У ролях:</strong> Давид Белль, Сиріл Раффаеллі, Тоні Д\'Амаріо, Дані Веріссімо, Бібі Насері, Франсуа Шатто',
+          'duration': '<strong>Тривалість:</strong> 84 хвилини',
+          'country': '<strong>Країна:</strong> Франція',
+          'language': '<strong>Озвучення:</strong> Російська',
+          'description': '<strong>Опис:</strong> Фільм "13-ий район" - це захоплююча подорож у світ злочину і корупції, де кожен крок може бути останнім. У мегаполісі, де закон не діє, а правосуддя - це пусте слово, настало час віддати належне. Головний герой, який вирішив змінити своє життя, стає частиною складної операції, щоб врятувати свій район від кримінального устрою. За допомогою своїх навичок та впередбачення, він прагне відновити порядок у своєму районі. Проте кожен злочин має свою ціну, і герой має бути готовий заплатити ціною власного життя за те, щоб змінити ситуацію. Це пригода, що підштовхує до межі можливостей і показує, що інколи, щоб врятувати інших, треба ризикувати власним життям. Фільм "13-ий район" переповнений екшном, напруженими моментами і непередбачуваними поворотами подій, що залишать вас на межі сидіння. Це кіно, яке підніме ваш адреналін і залишить незабутні враження про справжню силу людини в умовах найвищого напруження.',
+          'recommendation-heading': 'Що ще подивитися',
+        
+          'trailer-heading': 'Трейлер: 13-ий район',
+          'trailer-description': 'Поглибіться у світ безжалісного злочину та непередбачуваних випробувань у захоплюючому трейлері до фільму "13-ий район"',
+  
+        },
+  
+        'en': {
+           //Зміна шапки
+           'home': 'Home',
+           'movies': 'Movies',
+           'series': 'Series',
+           'englishMovies': 'English Movies',
+           'top100': 'Top 100',
+           'about': 'About Author',
+    
+    
+          'contact-info': 'Contact Information',
+          'communication': 'For communication, collaboration, and inquiries:',
+          'phone': 'Phone: +380982023020',
+          'social-media': 'Social Media',
+          'join': 'Join me on social media to stay updated on news and updates:',
+          'all-rights': '© 2023 All rights reserved | Design and Development: Brytiuk Bohdan',
+  
+  
+          // Переклад для фільму
+  
+          'heading': '13th District',
+          'releaseYear': 'Release Year:',
+          'genre': '<strong>Genre:</strong> Action/Crime',
+          'directors': '<strong> Directors:</strong> Pierre Morel',
+          'cast': '<strong>Cast:</strong> David Belle, Cyril Raffaelli, Tony D\'Amario, Dany Verissimo, Bibi Naceri, François Chattot',
+          'duration': '<strong>Duration:</strong> 84 minutes',
+          'country': '<strong>Country:</strong> France',
+          'language': '<strong>Language:</strong> Russian',
+          'description': '<strong>Description:</strong> Film "13th District" is an exciting journey into the world of crime and corruption, where every step could be the last. In a metropolis where the law doesn\'t operate, and justice is an empty word, it\'s time to set things right. The main character, who decides to change his life, becomes part of a complex operation to save his district from criminal organization. With his skills and foresight, he aims to restore order in his district. However, every crime has its price, and the hero must be prepared to pay with his own life to change the situation. It\'s an adventure that pushes the limits and shows that sometimes, to save others, you have to risk your own life. "13th District" is filled with action, tense moments, and unexpected twists that will keep you on the edge of your seat. It\'s a film that will raise your adrenaline and leave unforgettable impressions about the true power of humanity in the most challenging conditions.', 
+  
+          'recommendation-heading': 'What else to watch',
+  
+          'trailer-heading': 'Trailer: 13th District',
+          'trailer-description': 'Dive into the world of ruthless crime and unpredictable challenges in the thrilling trailer for the film "13th District"',
+        },
+  };
+    
+      const selectedLang = translations[lang];
+    
+      //Шапка
+      document.querySelector('.nav-menu ul li:nth-child(1) a').textContent = selectedLang['home'];
+      document.querySelector('.nav-menu ul li:nth-child(2) a').textContent = selectedLang['movies'];
+      document.querySelector('.nav-menu ul li:nth-child(3) a').textContent = selectedLang['series'];
+      document.querySelector('.nav-menu ul li:nth-child(4) a').textContent = selectedLang['englishMovies'];
+      document.querySelector('.nav-menu ul li:nth-child(5) a').textContent = selectedLang['top100'];
+      document.querySelector('.nav-menu ul li:nth-child(6) a').textContent = selectedLang['about'];
+    
+  
+  
+      // Зміна футеру
+      document.querySelector('.footer-contact h3').textContent = selectedLang['contact-info'];
+      document.querySelector('.footer-contact p').textContent = selectedLang['communication'];
+      document.querySelector('.footer-social h3').textContent = selectedLang['social-media'];
+      document.querySelector('.footer-social p').textContent = selectedLang['join'];
+      document.querySelector('.footer-bottom p').textContent = selectedLang['all-rights'];
+      
+  
+      // Змінити текст для назви фільму
+      document.querySelector('.movie-details h2').textContent = selectedLang['heading'];
+  
+      document.querySelector('.movie-details p:nth-child(3)').innerHTML = '<strong>' + selectedLang['releaseYear'] + '</strong> 2020';
+      document.querySelector('.movie-details p:nth-child(4)').innerHTML = selectedLang['genre'];
+      document.querySelector('.movie-details p:nth-child(5)').innerHTML = selectedLang['directors'];
+      document.querySelector('.movie-details p:nth-child(6)').innerHTML = selectedLang['cast'];
+      document.querySelector('.movie-details p:nth-child(7)').innerHTML = selectedLang['duration'];
+      document.querySelector('.movie-details p:nth-child(8)').innerHTML = selectedLang['country'];
+      document.querySelector('.movie-details p:nth-child(9)').innerHTML = selectedLang['language'];
+      document.querySelector('.movie-details p:nth-child(10)').innerHTML = selectedLang['description'];
+  
+  
+      document.querySelector('.trailer-text h2').textContent = selectedLang['trailer-heading'];
+      document.querySelector('.trailer-text p').textContent = selectedLang['trailer-description'];
+
+      const recommendedMovies = document.querySelector('.recommended-movies h3');
+      recommendedMovies.textContent = translations[lang]['recommendation-heading'];
+  
+   
+      
+  }
+  </script>
+  
+  
+    <section class="movie">
+      <div class="movie-details">
+      <img src="images\13 rajon\13 rajon.jpg" alt="Лого фільму" style="float: left; margin-right: 20px;">
+      <h2>13-й район</h2> <!-- Назва фільму -->
+      <p><strong>Рік випуску:</strong> 2004</p> <!-- Рік -->
+        <p><strong>Жанр:</strong> Екшн/Кримінал</p> <!-- Жанр -->
+        <p><strong>Режисер:</strong> П'єр Морель</p>
+        <p><strong>У ролях:</strong> Давид Белль, Сиріл Раффаеллі, Тоні Д'Амаріо, Дані Веріссімо, Бібі Насері, Франсуа Шатто</p>
+        <p><strong>Тривалість:</strong> 84 хвилини</p> 
+        <p><strong>Країна:</strong> Франція</p>
+        <p><strong>Озвучення:</strong> Російська</p>
+        <p><strong>Опис:</strong> 
+
+         
+          Фільм "13-ий район" - це захоплююча подорож у світ злочину і корупції, де кожен крок може бути останнім. У мегаполісі, де закон не діє, а правосуддя - це пусте слово, настало час віддати належне. Головний герой, який вирішив змінити своє життя, стає частиною складної операції, щоб врятувати свій район від кримінального устрою. За допомогою своїх навичок та впередбачення, він прагне відновити порядок у своєму районі. Проте кожен злочин має свою ціну, і герой має бути готовий заплатити ціною власного життя за те, щоб змінити ситуацію. Це пригода, що підштовхує до межі можливостей і показує, що інколи, щоб врятувати інших, треба ризикувати власним життям. Фільм "13-ий район" переповнений екшном, напруженими моментами і непередбачуваними поворотами подій, що залишать вас на межі сидіння. Це кіно, яке підніме ваш адреналін і залишить незабутні враження про справжню силу людини в умовах найвищого напруження.</p>
+     
+</div>
+        <br>
+      </div>
+  
+     <!--  #region  Трейлер ютуба*/ -->
+  
+      <div class="players">
+      <div class="trailer-container">
+      <div class="trailer-text">
+        <h2>Трейлер: 13-ий район</h2>
+        <p>Поглибіться у світ безжалісного злочину та непередбачуваних випробувань у захоплюючому трейлері до фільму "13-ий район"</p>
+      </div>
+      <div class="player-container">
+        <div id="player"></div>
+       </div>
+     </div>
+    
+  <!-- Сценарій JavaScript для відтворення відео -->
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '500',
+        width: '800',
+        videoId: '8HokW_oPOoY',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+    function onPlayerReady(event) {
+    }
+   </script>
+    
+      <!-- #endregion */ -->
+  
+      <div class="video-container">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          poster="images\13 rajon\video.jpeg"
+          data-setup="{}">
+          <source src="films\13 rajon\13 rajon.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+           </p>
+         </video>
+        </div>
+      </div>
+    
+     <!-- Рекомендовані фільми -->
+     <div class="recommended-movies">
+      <h3>Що ще подивитися</h3>
+      <div class="movie-logos">
+          <div>
+              <a href="Time.html"><img src="images/time/Time.jpg" title="Час"></a>
+              <!--<p><strong>Час</strong></p>-->
+          </div>
+          <div>
+              <a href="13 rajon.html"><img src="images/13 rajon/13 rajon.jpg" title="13 район"></a>
+              <!--<p><strong>13 район</strong></p>-->
+          </div>
+          <div>
+              <a href="Black Woron.html"><img src="images/Black Woron/logo.jpg" title="Чорний Ворон"></a>
+              <!--<p><strong>Чорний Ворон</strong></p>-->
+          </div>
+          <div>
+              <a href="DVRZ.html"><img src="images/DVRZ/logo.jpg" title="Дільничий з ДВРЗ"></a>
+              <!--<p><strong>Дільничий з ДВРЗ</strong></p>-->
+          </div>
+          <div>
+              <a href="shaolin.html"><img src="images/shaolin/logo.jpg"  title="Шаолинь"></a>
+              <!--<p><strong>Шаолинь</strong></p>-->
+          </div>
+      </div>
+  </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+      </div>
+      <div class="footer-contact">
+        <h3>Контактна інформація</h3>
+        <p>Для спілкування, співпраці та запитань:</p>
+        <ul>
+          Email: Brubog12@gmail.com<br>
+          Телефон:+380982023020
+          <!-- Додайте інші способи зв'язку, які ви бажаєте включити -->
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Соціальні мережі</h3>
+        <p>Приєднуйтесь до мене в соціальних мережах, щоб бути в курсі новин та оновлень:</p>
+        <ul>
+          <a href="https://www.facebook.com/profile.php?id=100010045577563">Facebook</a>
+          <a href="https://github.com/Thebest1212d">Github</a>
+          <!-- Додайте посилання на ваші інші соціальні мережі -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Всі права захищені | Дизайн та розробка: Brytiuk Bohdan</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
